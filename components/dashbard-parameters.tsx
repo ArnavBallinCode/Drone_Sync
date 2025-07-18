@@ -314,46 +314,46 @@ export function DashboardParameters() {
             </CardContent>
           </Card>
 
-      {/* New row: Roll, Pitch, Yaw (Attitude) below Wx, Wy, Wz */}
-      <Card className="w-70 h-20">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
-          <CardTitle className="text-lg font-bold">Roll</CardTitle>
-          <Plane className="h-4 w-4 text-muted-foreground" />
-        </CardHeader>
-        <CardContent className="px-2 py-0">
-          {attitude ? (
-            <div className="text-base font-medium">{(attitude.roll * (180 / Math.PI)).toFixed(1)}°</div>
-          ) : (
-            <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
-          )}
-        </CardContent>
-      </Card>
-      <Card className="w-70 h-20">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
-          <CardTitle className="text-lg font-bold">Pitch</CardTitle>
-          <Plane className="h-4 w-4 text-muted-foreground" />
-        </CardHeader>
-        <CardContent className="px-2 py-0">
-          {attitude ? (
-            <div className="text-base font-medium">{(attitude.pitch * (180 / Math.PI)).toFixed(1)}°</div>
-          ) : (
-            <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
-          )}
-        </CardContent>
-      </Card>
-      <Card className="w-70 h-20">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
-          <CardTitle className="text-lg font-bold">Yaw</CardTitle>
-          <Plane className="h-4 w-4 text-muted-foreground" />
-        </CardHeader>
-        <CardContent className="px-2 py-0">
-          {attitude ? (
-            <div className="text-base font-medium">{(attitude.yaw * (180 / Math.PI)).toFixed(1)}°</div>
-          ) : (
-            <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
-          )}
-        </CardContent>
-      </Card>
+          {/* New row: Roll, Pitch, Yaw (Attitude) below Wx, Wy, Wz */}
+          <Card className="w-70 h-20">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
+              <CardTitle className="text-lg font-bold">Roll</CardTitle>
+              <Plane className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent className="px-2 py-0">
+              {attitude ? (
+                <div className="text-base font-medium">{(attitude.roll * (180 / Math.PI)).toFixed(1)}°</div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+              )}
+            </CardContent>
+          </Card>
+          <Card className="w-70 h-20">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
+              <CardTitle className="text-lg font-bold">Pitch</CardTitle>
+              <Plane className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent className="px-2 py-0">
+              {attitude ? (
+                <div className="text-base font-medium">{(attitude.pitch * (180 / Math.PI)).toFixed(1)}°</div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+              )}
+            </CardContent>
+          </Card>
+          <Card className="w-70 h-20">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
+              <CardTitle className="text-lg font-bold">Yaw</CardTitle>
+              <Plane className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent className="px-2 py-0">
+              {attitude ? (
+                <div className="text-base font-medium">{(attitude.yaw * (180 / Math.PI)).toFixed(1)}°</div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+              )}
+            </CardContent>
+          </Card>
 
         </div>
       </TabsContent>

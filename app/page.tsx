@@ -150,7 +150,7 @@ export default function DashboardPage() {
               <div className="pl-1">
                 <DashboardParameters />
               </div>
-              <div className="pl-1 pt-2">
+              <div className="pl-1 pt-2" style={{ height: 260, minHeight: 200, maxHeight: 300 }}>
                 <LiveMonitoringPanel />
               </div>
             </section>
@@ -167,8 +167,8 @@ export default function DashboardPage() {
                 style={{ background: '#000', display: 'block' }}
               />
             </section>
-            {/* Bottom Full-width Section */}
-            <section className="col-span-4 bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 400 }}>
+            {/* Bottom Full-width Section: Z vs Time chart shifted further down and made taller */}
+            <section className="col-span-4 bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 500, marginTop: 24 }}>
               <ZvsTimeChart data={graphData} />
             </section>
           </div>
