@@ -76,34 +76,48 @@ export default function DashboardPage() {
       }
     };
   }, []);
-  // System Status Component
-  function SystemStatus() {
-    const [currentStatus, setCurrentStatus] = React.useState("Flying")
-    const statusOptions = [
-      "Flying",
-      "Scanning for safe spots",
-      "Landing",
-      "Taking off",
-      "Hovering",
-      "Turning left",
-      "Turning right",
-      "Emergency landing"
-    ]
+  // Events from Jetson Component
+  function JetsonEventsBox() {
+    const [events, setEvents] = React.useState('');
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState('');
+
+    const fetchEvents = async () => {
+      setLoading(true);
+      setError('');
+      try {
+        const response = await fetch('/api/status-text', { cache: 'no-store' });
+        const result = await response.json();
+        if (result.status === 'success') {
+          setEvents(result.data);
+        } else {
+          setError(result.message || 'Failed to fetch events');
+        }
+      } catch (err) {
+        setError('Error fetching events');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     React.useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentStatus(statusOptions[Math.floor(Math.random() * statusOptions.length)])
-      }, 3000)
-      return () => clearInterval(interval)
-    }, [])
+      fetchEvents();
+      const interval = setInterval(fetchEvents, 5000);
+      return () => clearInterval(interval);
+    }, []);
+
     return (
-      <div className="bg-white border border-gray-300 p-4 h-full">
-        <h3 className="font-bold text-lg mb-2 flex items-center gap-2">System Status</h3>
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-          <Badge variant="outline" className="text-md font-semibold px-3 py-1">{currentStatus}</Badge>
-        </div>
+      <div className="bg-white border border-gray-300 p-4 h-full overflow-auto">
+        <h3 className="font-bold text-lg mb-2 flex items-center gap-2">Events from Jetson</h3>
+        {loading ? (
+          <div className="text-gray-500">Loading...</div>
+        ) : error ? (
+          <div className="text-red-500">{error}</div>
+        ) : (
+          <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>
+        )}
       </div>
-    )
+    );
   }
 
   const [view, setView] = React.useState<'dashboard' | 'analytics'>('dashboard');
@@ -141,16 +155,16 @@ export default function DashboardPage() {
             <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 650 }}>
               <DashboardSafeSpot />
             </section>
-            {/* System Status beside Safe Spot */}
+            {/* Events from Jetson beside Safe Spot */}
             <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 650 }}>
-              <SystemStatus />
+              <JetsonEventsBox />
             </section>
             {/* Top Middle Section: Parameters and Live Monitoring */}
             <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 650 }}>
               <div className="pl-1">
                 <DashboardParameters />
               </div>
-              <div className="pl-1 pt-2" style={{ height: 260, minHeight: 200, maxHeight: 300 }}>
+              <div className="flex-1 flex flex-col justify-stretch items-stretch min-h-0">
                 <LiveMonitoringPanel />
               </div>
             </section>

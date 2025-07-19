@@ -80,11 +80,54 @@ ls /dev/tty.*
 
 Update your scripts to use the correct device (e.g., `/dev/tty.usbserial-XXXX`).
 
+
 ## 2. How Data is Fetched
 
-- The backend API `/app/api/jetson-data/route.ts` uses SCP to fetch `/home/nvidia/safe_zone_data.txt` from your Jetson device every 5 seconds.
-- The frontend dashboard at `http://localhost:3000/` displays live arena, safe spots, and telemetry data.
-- All configuration for Jetson IP, username, and file path is in `/app/api/jetson-data/route.ts`.
+- The backend API `/app/api/jetson-data/route.ts` uses SCP to fetch `/home/nvidia/safe_zone_data.txt` from your Jetson device every 5 seconds (for arena/safe spots).
+- The backend API `/app/api/status-text/route.ts` uses SCP to fetch `/home/jetson/status.txt` from your Jetson device every 5 seconds (for events).
+- The frontend dashboard at `http://localhost:3000/` displays live arena, safe spots, telemetry, and Jetson events data.
+- All configuration for Jetson IP, username, and file path is in `/app/api/jetson-data/route.ts` (for arena/safe spots) and `/app/api/status-text/route.ts` (for events).
+## 2a. Jetson Events Integration
+
+- To display Jetson events (system status, logs, etc.), ensure your Jetson device writes event text to `/home/jetson/status.txt`.
+- The backend API `/app/api/status-text/route.ts` will fetch this file via SCP and serve its contents to the dashboard.
+- The dashboard's "Events from Jetson" box (in `/app/page.tsx`) will show the latest contents of `status.txt`, auto-updating every 5 seconds.
+
+### What to Edit for Actual Jetson Usage
+
+1. **/app/api/status-text/route.ts**
+   - Update `JETSON_USER`, `JETSON_HOST`, and `REMOTE_PATH` to match your Jetson's SSH username, IP address, and the path to `status.txt`.
+   - Example:
+     ```typescript
+     const JETSON_USER = 'jetson';
+     const JETSON_HOST = '192.168.1.100'; // Your Jetson IP
+     const REMOTE_PATH = '/home/jetson/status.txt';
+     ```
+
+2. **Jetson Device**
+   - Make sure your Jetson writes event/status info to `/home/jetson/status.txt` regularly.
+   - Example (Jetson Python):
+     ```python
+     with open('/home/jetson/status.txt', 'w') as f:
+         f.write('Flying\nBattery: 92%\nGPS Lock: True')
+     ```
+
+3. **/app/page.tsx**
+   - The dashboard is already set up to fetch and display events from `/api/status-text` in the "Events from Jetson" box.
+   - No changes needed unless you want to customize the display or polling interval.
+
+4. **/app/api/jetson-data/route.ts**
+   - For arena/safe spots, update Jetson connection details and file path as above.
+
+5. **Firewall/SSH**
+   - Ensure SSH keys and network access are set up for SCP between the dashboard server and Jetson.
+
+---
+
+**Summary:**
+- Edit `/app/api/status-text/route.ts` for Jetson connection and file path.
+- Ensure Jetson writes to `/home/jetson/status.txt`.
+- Dashboard will auto-fetch and display events in real time.
 
 ## 3. Service Startup Sequence
 
