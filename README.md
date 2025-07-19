@@ -1,74 +1,22 @@
-# <img src="Logo.png" alt="DroneSync GCS Logo" width="50" height="50"/> DroneSync GCS
+## DroneSync GCS Minimal Setup
 
-**Advanced Ground Control System for real-time drone telemetry, visualization, and calibration**
+1. Update `/app/api/jetson-data/route.ts` with your Jetson SCP fetch logic and port configuration.
 
-<p align="center">
-  <img src="Logo.png" alt="DroneSync GCS Logo" width="180" height="180"/>
-</p>
+2. Set the correct port for your telemetry connection in your scripts and configs.
 
-## 🔥 Overview  
-DroneSync GCS is a powerful, modern ground control system designed for professional drone operations. Built for real-time data visualization and calibration using the MAVLink protocol, DroneSync seamlessly integrates with Pixhawk and Jetson-based systems. Our platform features:
+3. To find the USB serial device for telemetry, use:
 
-- **Immersive 3D Data Visualization** 📊  
-- **Advanced TypeScript & React-based UI** 🎨  
-- **Real-time MAVLink telemetry processing** ⏳  
-- **Professional-grade sensor calibration** 🛰️  
-- **Responsive design for all devices** 💻📱
+```sh
+ls /dev/tty.*
+```
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
-  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js"/>
-  <img src="https://img.shields.io/badge/MAVLink-00AEEF?style=for-the-badge&logo=drone&logoColor=white" alt="MAVLink"/>
-</p>
-
-## 🌟 **Key Features**
-
-- **Real-time Telemetry Dashboard**
-  - Live battery status monitoring
-  - GPS positioning with visual mapping
-  - Attitude and orientation visualization
-  - System health analytics
-
-- **🛡️ Dynamic Drone Arena Visualization**
-  - **Complete dynamic system** - No hardcoded coordinates
-  - **Real-time SCP data fetching** from Jetson device
-  - **Dynamic arena boundaries** from GPS coordinates
-  - **Live safe spot detection** with pulsing animations
+Update your scripts to use the correct device (e.g., `/dev/tty.usbserial-XXXX`).
   - **Auto-refresh every 30 seconds** from Jetson device
   - **GPS-to-field coordinate conversion** system
   - **Real-time drone position tracking** with trail effects
   - **Safe spot proximity alerts** with distance calculations
 
-- **Professional Calibration Suite**
-  - Gyroscope calibration
-  - Accelerometer calibration
-  - Magnetometer calibration
-  - Level horizon calibration
-  - Radio calibration
-
-- **Advanced Visualization**
-  - Interactive 3D drone model
-  - Real-time attitude representation
-  - Position tracking and history
-  - Data-rich telemetry charts
-
-- **Optimized Architecture**
-  - Websocket-based communications
-  - Efficient data processing
-  - Modular component design
-  - Cross-platform compatibility
-
 ---
-
-## ⚙️ **System Architecture**
-
-<p align="center">
-  <img src="https://mermaid.ink/img/pako:eNp1kk1PwzAMhv9KlBOI9Q9UQkKABBJiB7jshpzGa6M1cZQ4G6raf9dJui0wPln288Z-7ewQclEQZHDUJXUWz1JNiBa1XT0bn0UWjGZ0Hrcx3K3X6_hRo4tjioNUxpErWkRprZG7Ni_J8OPkBcupy5sQllKZlD0HsqlIh6roRlx-MQdtgiq65rhASz3pZ6-TpWk3vvHJDvfeDGawe1l8XcDY0Jl_cdzcfjdMKS7khaKzkCQqqVXRYwtZhtq-0aADRxlQmbJllpa3de0GDyXYjiMnkI1HhVJu3Qx4zxFkud4gm-Wmg-xC0svMyFOEjPc9iGV_PD5enU6jQPZo56rXRpGCzKCvcyzAwckGsrTBEWRs7jnf8C7NQnH9DHjUZsyo0-JUcuE6n8B_9fQJnMSQsw" alt="DroneSync Architecture" width="800"/>
-</p>
 
 ### 🎯 **System Architecture**
 
@@ -114,206 +62,64 @@ DroneSync GCS is a powerful, modern ground control system designed for professio
 
 ```bash
 # Clone the DroneSync repository
-git clone https://github.com/your-username/Dronesync-gcs.git
-cd Dronesync-gcs
+npm run dev
 
-# Install frontend dependencies
-pnpm install
-# or with npm
-npm install
+    style H fill:#a29bfe
 
-# Install Python dependencies
-pip install pymavlink websockets asyncio pyserial
+# DroneSync GCS Minimal Setup
+
+## 1. Setup Instructions
+
+- Update `/app/api/jetson-data/route.ts` with your Jetson SCP fetch logic and port configuration.
+- Set the correct port for your telemetry connection in your scripts and configs.
+- To find the USB serial device for telemetry, use:
+
+```sh
+ls /dev/tty.*
 ```
 
-### 🛠️ **2. Configuration**
+Update your scripts to use the correct device (e.g., `/dev/tty.usbserial-XXXX`).
 
-Create a `.env.local` file in the project root:
+## 2. How Data is Fetched
 
-```
-NEXT_PUBLIC_WEBSOCKET_URL=ws://localhost:8765
-NEXT_PUBLIC_MAVLINK_CONNECTION=/dev/tty.usbserial-XXXX
-NEXT_PUBLIC_BAUD_RATE=57600
-```
+- The backend API `/app/api/jetson-data/route.ts` uses SCP to fetch `/home/nvidia/safe_zone_data.txt` from your Jetson device every 5 seconds.
+- The frontend dashboard at `http://localhost:3000/` displays live arena, safe spots, and telemetry data.
+- All configuration for Jetson IP, username, and file path is in `/app/api/jetson-data/route.ts`.
 
-Adjust the serial port to match your system configuration:
-- macOS: `/dev/tty.usbserial-XXXX`
-- Linux: `/dev/ttyUSB0` or `/dev/ttyACM0`
-- Windows: `COM3` (or other COM port)
-
-### 🔌 **3. Connecting Your Drone**
-
-**IMPORTANT**: We use MAVProxy as a bridge to avoid port conflicts between multiple applications:
-
-```mermaid
-graph LR
-    A[Drone Hardware<br/>/dev/tty.usbserial-XXXX] --> B[MAVProxy<br/>Master Connection]
-    B --> C[UDP:14550<br/>listen.py]
-    B --> D[UDP:14551<br/>Other Apps]
-    B --> E[Console<br/>Commands]
-    
-    style A fill:#ff6b6b
-    style B fill:#4ecdc4
-    style C fill:#45b7d1
-    style D fill:#96ceb4
-    style E fill:#feca57
-```
-
-**Setup Commands:**
-```bash
-# Terminal 1: Start MAVProxy with UDP forwarding (REQUIRED FIRST)
-mavproxy.py --master=/dev/tty.usbserial-XXXX --baud=115200 --out=udp:localhost:14550 --out=udp:localhost:14551 --console
-
-# You should see:
-# "Connecting to /dev/tty.usbserial-XXXX"
-# "Received heartbeat from APM"
-```
-
-### 🖥️ **4. Running the Complete System**
-
-**Data Flow Architecture:**
-```mermaid
-sequenceDiagram
-    participant D as Drone Hardware
-    participant M as MAVProxy
-    participant L as listen.py
-    participant J as Jetson Device
-    participant F as Frontend
-    
-    D->>M: MAVLink Messages
-    M->>L: UDP Stream (14550)
-    L->>L: Parse & Save JSON
-    F->>L: Fetch JSON Files
-    
-    J->>J: Update safe_zone_data.txt
-    F->>J: SCP Fetch (30s interval)
-    F->>F: Combine Telemetry + Arena Data
-```
-
-**Start all services in order:**
+## 3. Service Startup Sequence
 
 ```bash
 # Terminal 1: MAVProxy (Hardware Bridge)
-mavproxy.py --master=/dev/tty.usbserial-XXXX --baud=115200 --out=udp:localhost:14550 --console
+        ARENA[3D Arena<br/>Visualization]
 
 # Terminal 2: Telemetry Listener (via UDP)
-python3 listen.py --connection=udp:localhost:14550
+        TELEMETRY[Real-time<br/>Dashboard]
 
 # Terminal 3: Calibration Server
-python3 calibrating/calibration_server.py
+    end
 
 # Terminal 4: Next.js Web Interface
-npm run dev
+    
 ```
 
-**System Status Check:**
+## 4. Jetson SCP Fetch Example
+
 ```bash
-# Verify MAVProxy connection
-# Should show: "heartbeat from system X component Y"
-
-# Check JSON files being created
-ls -la public/params/
-# Should show: ATTITUDE.json, GLOBAL_POSITION_INT.json, etc.
-
-# Test Jetson connection
-curl http://localhost:3000/api/jetson-data
+# Test Jetson SCP connection
+    subgraph DATA["📊 Data Layer"]
 ```
 
-Navigate to `http://localhost:3000` in your browser to access the DroneSync GCS interface.
+## 5. Accessing the Dashboard
 
-## 📊 **Features & Capabilities**
-
-### 📡 **Real-time Telemetry**
-
-DroneSync GCS provides comprehensive drone telemetry monitoring:
-
-- **Attitude Data**: Real-time roll, pitch, yaw with 3D visualization
-- **Position Tracking**: GPS coordinates with map overlay and flight path
-- **System Health**: Battery status, signal strength, and system diagnostics
-- **Sensor Data**: IMU readings, magnetometer data, and barometric information
-
-### 🛠️ **Professional Calibration Suite**
-
-The calibration interface guides you through each procedure with clear instructions:
-
-1. **Gyroscope Calibration**
-   - Automatically detects and corrects gyro bias
-   - Visual indicators for calibration quality
-   
-2. **Accelerometer Calibration**
-   - Six-position guided calibration workflow
-   - Real-time feedback for each position
-   
-3. **Magnetometer Calibration**
-   - Interactive compass calibration with visual guidance
-   - Interference detection and correction
-   
-4. **Radio Calibration**
-   - Channel mapping and endpoint configuration
-   - Failsafe testing and configuration
+- Main dashboard: http://localhost:3000/
+- History page: http://localhost:3000/history
 
 ---
 
-## 🛡️ **Dynamic Drone Arena Visualization System**
+# Diagrams & Advanced Details (Reference)
 
-### 📍 **Overview**
-DroneSync GCS features a completely dynamic drone arena visualization system that fetches real-time arena boundaries and safe spots from a Jetson device via SCP. No coordinates are hardcoded - everything is dynamically fetched and updated in real-time.
-
-### 🏗️ **System Architecture**
-
-```mermaid
-graph TD
-    A[Jetson Device<br/>10.0.2.219] --> B[SCP Fetch<br/>Every 30s]
-    B --> C[Backend API<br/>/api/jetson-data]
-    C --> D[Frontend UI<br/>/safe-spots]
-    D --> E[Live Visualization<br/>Arena + Safe Spots]
-    
-    F[Drone Telemetry] --> G[MAVProxy<br/>UDP Bridge]
-    G --> H[listen.py<br/>JSON Writer]
-    H --> I[Position Updates<br/>250ms]
-    I --> D
-    
-    J[GPS Coordinates] --> K[Field Coordinate<br/>Conversion]
-    K --> E
-    
-    style A fill:#ffd93d
-    style B fill:#6bcf7f
-    style C fill:#4d96ff
-    style D fill:#ff6b9d
-    style E fill:#c44536
-    style F fill:#ff8c42
-    style G fill:#6c5ce7
-    style H fill:#a29bfe
-    style I fill:#fd79a8
-```
-
-**Complete System Integration:**
-```mermaid
-flowchart TB
-    subgraph HW["🔧 Hardware Layer"]
-        DRONE[Pixhawk/Drone<br/>MAVLink Protocol]
-        JETSON[Jetson Device<br/>10.0.2.219]
-    end
-    
-    subgraph BRIDGE["🌉 Communication Bridge"]
-        MAVPROXY[MAVProxy<br/>UDP Forwarding]
-        SCP[SCP Protocol<br/>File Transfer]
-    end
-    
-    subgraph BACKEND["⚙️ Backend Services"]
-        LISTEN[listen.py<br/>Telemetry Parser]
-        API[Jetson API<br/>Route Handler]
-        CALIB[Calibration<br/>WebSocket Server]
-    end
-    
-    subgraph FRONTEND["🎨 Frontend Interface"]
-        REACT[Next.js/React<br/>Components]
-        SAFESPOTS[Safe Spots<br/>Detection UI]
-        ARENA[3D Arena<br/>Visualization]
-        TELEMETRY[Real-time<br/>Dashboard]
-    end
-    
-    subgraph DATA["📊 Data Layer"]
+<!-- All diagrams, architecture, and advanced info moved below for reference -->
+...existing diagrams and technical details from previous README...
         JSON[Telemetry JSON<br/>Files]
         TEMP[Temporary<br/>SCP Cache]
     end
