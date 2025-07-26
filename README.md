@@ -4,8 +4,8 @@
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd SkySync_Gcs-1.1
+git clone https://github.com/ArnavBallinCode/Drone_Sync.git
+cd Drone_Sync
 
 # Install Node.js dependencies
 npm install
