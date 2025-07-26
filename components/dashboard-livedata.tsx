@@ -69,7 +69,7 @@ export default function LiveMonitoringPanel() {
   const calculateDistance = (pos1: {x: number, y: number}, pos2: {x: number, y: number}) =>
     Math.sqrt(Math.pow(pos1.x - pos2.x, 2) + Math.pow(pos1.y - pos2.y, 2))
 
-  // Convert GPS coordinates to local field coordinates
+  // Convert  coordinates to local field coordinates
   const gpsToFieldCoords = (gpsCoords: { lat: number, lng: number }, arena: ArenaCorner[]): { x: number, y: number } => {
     if (arena.length < 4) {
       return {
