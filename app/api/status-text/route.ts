@@ -23,7 +23,7 @@ export async function GET() {
         // Return mock data as fallback
         const mockEvents = `Drone Status: Flying (MOCK DATA)
 Battery: 85%
-GPS Lock: Active
+Lock: Active
 Altitude: 120m
 Speed: 15 m/s
 Temperature: 25°C
