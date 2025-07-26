@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { RefreshCw, Download, Play, Pause, Database, Clock, TrendingUp, Trash2 } from "lucide-react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts'
+import { AutoCollectButton } from "@/components/auto-collect-button"
+import { useAutoCollect } from "@/contexts/auto-collect-context"
 
 interface TelemetrySnapshot {
   timestamp: string
@@ -63,18 +65,23 @@ interface TelemetrySnapshot {
 }
 
 export default function HistoryAnalysisPage() {
+  const { graphData, autoCollect, collecting, refreshData } = useAutoCollect()
   const [historyData, setHistoryData] = useState<TelemetrySnapshot[]>([])
   const [loading, setLoading] = useState(false)
-  const [collecting, setCollecting] = useState(false)
   const [clearing, setClearing] = useState(false)
-  const [autoCollect, setAutoCollect] = useState(false)
   const [selectedDays, setSelectedDays] = useState('1')
   const [lastUpdate, setLastUpdate] = useState<string>('')
   const [dataCount, setDataCount] = useState(0)
   const [selectedTimeRange, setSelectedTimeRange] = useState('all')
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Fetch historical data
+  // Use the shared graphData from context
+  useEffect(() => {
+    setHistoryData(graphData)
+    setDataCount(graphData.length)
+    setLastUpdate(new Date().toLocaleTimeString())
+  }, [graphData])
+
+  // Fetch historical data (for changing days filter)
   const fetchHistoryData = async (days: number = 1) => {
     setLoading(true)
     try {
@@ -99,34 +106,6 @@ export default function HistoryAnalysisPage() {
       console.error('Error fetching history data:', error)
     } finally {
       setLoading(false)
-    }
-  }
-
-  // Collect current data and add to history
-  const collectCurrentData = async () => {
-    setCollecting(true)
-    try {
-      const response = await fetch('/api/history-data?action=collect', {
-        method: 'GET',
-        cache: 'no-store'
-      })
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-
-      const result = await response.json()
-
-      if (result.status === 'success') {
-        // Refresh the data after collecting
-        await fetchHistoryData(parseInt(selectedDays))
-      } else {
-        console.error('Failed to collect data:', result.error)
-      }
-    } catch (error) {
-      console.error('Error collecting data:', error)
-    } finally {
-      setCollecting(false)
     }
   }
 
@@ -164,23 +143,6 @@ export default function HistoryAnalysisPage() {
       alert('Error clearing history data: ' + error)
     } finally {
       setClearing(false)
-    }
-  }
-
-  // Toggle auto-collect
-  const toggleAutoCollect = () => {
-    if (autoCollect) {
-      // Stop auto-collect
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
-      setAutoCollect(false)
-    } else {
-      // Start auto-collect every 5 seconds
-      collectCurrentData() // Initial collect
-      intervalRef.current = setInterval(collectCurrentData, 5000)
-      setAutoCollect(true)
     }
   }
 
@@ -353,15 +315,6 @@ export default function HistoryAnalysisPage() {
     fetchHistoryData(parseInt(selectedDays))
   }, [selectedDays])
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-      }
-    }
-  }, [])
-
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -415,23 +368,16 @@ export default function HistoryAnalysisPage() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <Button
-                onClick={toggleAutoCollect}
-                variant={autoCollect ? "destructive" : "default"}
-                size="sm"
-              >
-                {autoCollect ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-                {autoCollect ? 'Stop' : 'Start'} Auto-Collect
-              </Button>
+              <AutoCollectButton />
 
               <Button
-                onClick={collectCurrentData}
+                onClick={refreshData}
                 disabled={collecting}
                 variant="outline"
                 size="sm"
               >
                 <RefreshCw className={`w-4 h-4 mr-2 ${collecting ? 'animate-spin' : ''}`} />
-                Collect Now
+                Refresh Now
               </Button>
             </div>
 

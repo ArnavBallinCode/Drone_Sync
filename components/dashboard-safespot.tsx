@@ -6,7 +6,27 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { RefreshCw, Wifi, WifiOff, MapPin, Clock } from "lucide-react"
-import { PositionSimulator } from '@/app/safe-spots/page'
+
+// Position simulator for testing
+class PositionSimulator {
+  x = 1.5
+  y = 1.2
+  vx = 0.2
+  vy = 0.15
+  radius = 2
+  angle = 0
+
+  update() {
+    this.angle += 0.02
+    this.x = 1.5 + this.radius * Math.cos(this.angle)
+    this.y = 1.2 + this.radius * Math.sin(this.angle * 0.7)
+
+    this.x = Math.max(-4, Math.min(4, this.x))
+    this.y = Math.max(-3, Math.min(3, this.y))
+
+    return { x: this.x, y: this.y }
+  }
+}
 
 interface ArenaCorner {
   lat: number

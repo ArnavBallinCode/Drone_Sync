@@ -5098,5 +5098,4952 @@
       "base_mode": 29,
       "custom_mode": 50593792
     }
+  },
+  {
+    "timestamp": "2025-07-26T22:07:39.112Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:07:40.139Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:07:59.164Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:08:00.260Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:08:10.418Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:08:20.557Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:08:30.543Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:08:40.571Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:08:41.985Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:02.158Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:06.209Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:12.442Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:22.686Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:38.820Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:48.853Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:09:58.889Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:10:03.087Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:10:13.118Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:10:25.167Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:10:33.639Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:10:43.686Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:10:55.781Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:11:03.903Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:11:45.962Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:11:52.105Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:11:55.348Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:11:57.369Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:02.374Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:10.461Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:14.051Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:24.051Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:26.939Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:46.255Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:51.254Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:12:57.054Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:03.942Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:04.161Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:32.563Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:36.602Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:44.777Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:54.819Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:58.074Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:13:59.873Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:14:08.190Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:14:12.906Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:14:18.411Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:14:18.431Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:14:38.580Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:14:48.847Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:15:03.928Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:15:35.961Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:15:46.020Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:15:47.256Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:15:54.910Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:16:15.073Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:16:25.112Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:16:25.588Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:16:27.446Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:16:47.498Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:17:07.641Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:17:17.865Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:17:27.890Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:17:37.739Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:17:47.784Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:17:57.808Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:18:08.268Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:18:57.083Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:07.253Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:07.718Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:08.179Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:08.738Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:09.163Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:09.590Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:10.260Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:10.691Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:11.114Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:11.543Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:11.969Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:12.494Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:12.928Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:13.809Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:24.598Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:35.433Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:46.171Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:19:56.196Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:20:09.216Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:20:16.291Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:20:26.310Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:20:37.202Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:20:46.796Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:24:57.181Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:25:06.249Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:25:53.165Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:25:58.154Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:26:03.162Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:28:05.123Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
+  },
+  {
+    "timestamp": "2025-07-26T22:35:45.591Z",
+    "time_boot_ms": 122983,
+    "battery": {
+      "voltage": 749,
+      "current": -1,
+      "remaining": -1,
+      "temperature": 32767
+    },
+    "position": {
+      "x": 8.619555863875172,
+      "y": 8.480183326916276,
+      "z": -6.536472949340568,
+      "lat": 1,
+      "lon": 0,
+      "alt": 40,
+      "relative_alt": 24
+    },
+    "velocity": {
+      "vx": 0.07052566025032855,
+      "vy": 0.07853941378758719,
+      "vz": -0.018616616790764904
+    },
+    "attitude": {
+      "roll": -0.15584047138690948,
+      "pitch": 0.05590581148862839,
+      "yaw": -1.6998401880264282,
+      "rollspeed": 0.002514726249501109,
+      "pitchspeed": 0.004297242499887943,
+      "yawspeed": 0.0006100456230342388
+    },
+    "imu": {
+      "xacc": 0,
+      "yacc": -14,
+      "zacc": -1014,
+      "xgyro": 0,
+      "ygyro": 21,
+      "zgyro": 5,
+      "xmag": -178,
+      "ymag": -438,
+      "zmag": 232
+    },
+    "rangefinder": {
+      "distance": 9
+    },
+    "heartbeat": {
+      "system_status": 0,
+      "base_mode": 29,
+      "custom_mode": 50593792
+    }
   }
 ]

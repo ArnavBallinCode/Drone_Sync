@@ -1,81 +1,18 @@
 "use client"
-import { Button } from "@/components/ui/button";
-import { Play, Pause } from "lucide-react";
 
 import React from "react"
-import { ModeToggle } from "@/components/mode-toggle"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DashboardParameters } from "@/components/dashbard-parameters"
 import DashboardSafeSpot from "@/components/dashboard-safespot"
 import ZvsTimeChart from "@/components/dashboard-z_vs_t-graph"
-import { PositionSimulator } from "@/components/dashboard-livedata"
 import LiveMonitoringPanel from "@/components/dashboard-livedata"
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
+import { AutoCollectButton } from "@/components/auto-collect-button"
+import { useAutoCollect } from "@/contexts/auto-collect-context"
 
 
 export default function DashboardPage() {
-  // Auto-collect button logic and graph update
-  const [autoCollect, setAutoCollect] = React.useState(false);
-  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
-  const [collecting, setCollecting] = React.useState(false);
-  const [graphData, setGraphData] = React.useState<any[]>([]);
+  const { graphData } = useAutoCollect()
 
-  // Fetch graph data (like history page)
-  const fetchGraphData = async () => {
-    try {
-      const response = await fetch('/api/history-data?days=1', { cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const result = await response.json();
-      if (result.status === 'success') {
-        setGraphData(result.data || []);
-      }
-    } catch (error) {
-      console.error('Error fetching graph data:', error);
-    }
-  };
-
-  // Collect current data and update graph
-  const collectCurrentData = async () => {
-    setCollecting(true);
-    try {
-      const response = await fetch('/api/history-data?action=collect', { method: 'GET', cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const result = await response.json();
-      if (result.status === 'success') {
-        await fetchGraphData();
-      }
-    } catch (error) {
-      console.error('Error collecting data:', error);
-    } finally {
-      setCollecting(false);
-    }
-  };
-
-  // Auto-collect logic
-  const toggleAutoCollect = () => {
-    if (autoCollect) {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-      setAutoCollect(false);
-    } else {
-      collectCurrentData();
-      intervalRef.current = setInterval(collectCurrentData, 5000);
-      setAutoCollect(true);
-    }
-  };
-
-  // Initial fetch on mount
-  React.useEffect(() => {
-    fetchGraphData();
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
   // Events from Jetson Component
   function JetsonEventsBox() {
     const [events, setEvents] = React.useState('');
@@ -129,17 +66,7 @@ export default function DashboardPage() {
   return (
     <div className="max-h-screen w-full flex flex-col">
       {/* Auto-collect button at the top of the page */}
-      <div className="flex items-center justify-end p-4">
-        <Button
-          onClick={toggleAutoCollect}
-          variant={autoCollect ? "destructive" : "default"}
-          size="sm"
-          disabled={collecting}
-        >
-          {autoCollect ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-          {autoCollect ? "Stop" : "Start"} Auto-Collect
-        </Button>
-      </div>
+      <AutoCollectButton />
       <main className="flex-1 h-full w-full">
         {view === 'dashboard' ? (
           <div

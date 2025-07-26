@@ -7,7 +7,6 @@ import { ArrowUp, Axis3D, Battery, Cpu, CpuIcon, Gauge, MemoryStick, Plane, Stor
 import { TelemetryOverview } from "./telemetry-overview"
 import { useTelemetryData } from "@/app/hooks/useTelemetryData"
 import { Progress } from "@/components/ui/progress"
-import { TelemetryStatus } from "@/app/components/telemetry-status"
 import { FlightDataSimulator } from "./telemetry-overview"
 
 export function DashboardParameters() {

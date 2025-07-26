@@ -4,8 +4,6 @@ import { useEffect, useState, useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowUp, Battery, Gauge, Thermometer } from "lucide-react"
-import { ParameterCard } from "@/components/parameter-card"
-import { AttitudeVisualizer } from "@/components/attitude-visualizer"
 
 // Define the parameter types we're interested in
 const PARAM_TYPES = [
@@ -319,10 +317,23 @@ export function TelemetryOverview() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
           <Card className="lg:col-span-4">
             <CardHeader>
-              <CardTitle>3D Attitude Visualization</CardTitle>
+              <CardTitle>Attitude Data</CardTitle>
             </CardHeader>
             <CardContent className="h-[350px]">
-              <AttitudeVisualizer />
+              <div className="grid grid-cols-3 gap-4 h-full">
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Roll</div>
+                  <div className="text-2xl font-mono">{attitude?.roll?.toFixed(2) || '0.00'}°</div>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Pitch</div>
+                  <div className="text-2xl font-mono">{attitude?.pitch?.toFixed(2) || '0.00'}°</div>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Yaw</div>
+                  <div className="text-2xl font-mono">{attitude?.yaw?.toFixed(2) || '0.00'}°</div>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
@@ -374,20 +385,51 @@ export function TelemetryOverview() {
       <TabsContent value="attitude">
         <Card>
           <CardHeader>
-            <CardTitle>Attitude Visualization</CardTitle>
-            <CardDescription>Real-time 3D visualization of aircraft attitude</CardDescription>
+            <CardTitle>Attitude Data</CardTitle>
+            <CardDescription>Real-time attitude data</CardDescription>
           </CardHeader>
           <CardContent className="h-[500px]">
-            <AttitudeVisualizer />
+            <div className="grid grid-cols-2 gap-6 h-full">
+              <div className="space-y-4">
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded">
+                  <div className="text-lg text-gray-600 dark:text-gray-400">Roll</div>
+                  <div className="text-4xl font-mono">{attitude?.roll?.toFixed(2) || '0.00'}°</div>
+                  <div className="text-sm text-gray-500">Roll Speed: {attitude?.rollspeed?.toFixed(2) || '0.00'} rad/s</div>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded">
+                  <div className="text-lg text-gray-600 dark:text-gray-400">Pitch</div>
+                  <div className="text-4xl font-mono">{attitude?.pitch?.toFixed(2) || '0.00'}°</div>
+                  <div className="text-sm text-gray-500">Pitch Speed: {attitude?.pitchspeed?.toFixed(2) || '0.00'} rad/s</div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded">
+                  <div className="text-lg text-gray-600 dark:text-gray-400">Yaw</div>
+                  <div className="text-4xl font-mono">{attitude?.yaw?.toFixed(2) || '0.00'}°</div>
+                  <div className="text-sm text-gray-500">Yaw Speed: {attitude?.yawspeed?.toFixed(2) || '0.00'} rad/s</div>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded">
+                  <div className="text-lg text-gray-600 dark:text-gray-400">Status</div>
+                  <div className="text-2xl font-mono">{attitude ? 'Live' : 'Simulated'}</div>
+                  <div className="text-sm text-gray-500">Time: {attitude?.time_boot_ms || 0}ms</div>
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </TabsContent>
 
       <TabsContent value="parameters">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {PARAM_TYPES.map((paramType) => (
-            <ParameterCard key={paramType} paramType={paramType} />
-          ))}
+          <Card>
+            <CardHeader>
+              <CardTitle>System Status</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-mono">Active</div>
+              <div className="text-sm text-gray-500">All systems operational</div>
+            </CardContent>
+          </Card>
         </div>
       </TabsContent>
     </Tabs>
