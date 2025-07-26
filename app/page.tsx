@@ -83,35 +83,35 @@ export default function DashboardPage() {
     const [error, setError] = React.useState('');
 
     const fetchEvents = async () => {
-      setLoading(true);
+      // Don't show loading for subsequent fetches to prevent flickering
+      if (!events) setLoading(true);
       setError('');
       try {
         const response = await fetch('/api/status-text', { cache: 'no-store' });
         const result = await response.json();
         if (result.status === 'success') {
           setEvents(result.data);
+          setLoading(false);
         } else {
           setError(result.message || 'Failed to fetch events');
         }
       } catch (err) {
         setError('Error fetching events');
-      } finally {
-        setLoading(false);
       }
     };
 
     React.useEffect(() => {
       fetchEvents();
-      const interval = setInterval(fetchEvents, 5000);
+      const interval = setInterval(fetchEvents, 3000); // Faster update - 3 seconds
       return () => clearInterval(interval);
     }, []);
 
     return (
       <div className="bg-white border border-gray-300 p-4 h-full overflow-auto">
         <h3 className="font-bold text-lg mb-2 flex items-center gap-2">Events from Jetson</h3>
-        {loading ? (
+        {loading && !events ? (
           <div className="text-gray-500">Loading...</div>
-        ) : error ? (
+        ) : error && !events ? (
           <div className="text-red-500">{error}</div>
         ) : (
           <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>
@@ -197,5 +197,4 @@ export default function DashboardPage() {
     </div>
   )
 }
-
 

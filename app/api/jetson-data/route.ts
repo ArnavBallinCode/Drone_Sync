@@ -7,9 +7,9 @@ import path from 'path'
 const execAsync = promisify(exec)
 
 const JETSON_CONFIG = {
-  ip: '10.0.2.219',
-  username: 'jetson123',
-  remotePath: '/home/nvidia/safe_zone_data.txt',
+  ip: '192.168.1.4',
+  username: 'arnavangarkar',
+  remotePath: '/Users/arnavangarkar/safe_spots/safe_spots.txt',
   localPath: path.join(process.cwd(), 'temp', 'safe_zone_data.txt')
 }
 
@@ -118,7 +118,7 @@ async function fetchJetsonData(): Promise<ParsedData> {
     await ensureTempDir()
 
     // SCP command to fetch the file from Jetson
-    const scpCommand = `scp -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${JETSON_CONFIG.username}@${JETSON_CONFIG.ip}:${JETSON_CONFIG.remotePath} ${JETSON_CONFIG.localPath}`
+    const scpCommand = `scp -i ~/.ssh/test_mac_key -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${JETSON_CONFIG.username}@${JETSON_CONFIG.ip}:${JETSON_CONFIG.remotePath} ${JETSON_CONFIG.localPath}`
 
     console.log('Executing SCP command:', scpCommand)
 
@@ -142,12 +142,23 @@ async function fetchJetsonData(): Promise<ParsedData> {
   } catch (error) {
     console.error('Error fetching Jetson data:', error)
 
+    // Return mock data as fallback
+    const mockData = `Arena:
+Corner1: [37.7749, -122.4194]
+Corner2: [37.7749, -122.4144]
+Corner3: [37.7699, -122.4144]
+Corner4: [37.7699, -122.4194]
+
+Detected Safe Spots
+SafeSpots:
+Spot1: [37.7730, -122.4180]
+Spot2: [37.7720, -122.4170]
+Spot3: [37.7710, -122.4160]`
+
+    const mockParsedData = parseArenaData(mockData)
     return {
-      arena: [],
-      safeSpots: [],
-      timestamp: new Date().toISOString(),
-      status: 'error',
-      error: error instanceof Error ? error.message : 'Failed to fetch data from Jetson'
+      ...mockParsedData,
+      error: `Using mock data - Connection failed: ${error instanceof Error ? error.message : 'Unknown error'}`
     }
   }
 }
