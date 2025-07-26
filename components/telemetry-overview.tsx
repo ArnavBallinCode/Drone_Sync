@@ -266,14 +266,14 @@ export function TelemetryOverview() {
               <div className="text-2xl font-bold">
                 {globalPosition
                   ? (Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) / 100).toFixed(2) +
-                    " m/s"
+                  " m/s"
                   : "Loading..."}
               </div>
               <p className="text-xs text-muted-foreground">
                 {globalPosition
                   ? ((Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) / 100) * 3.6).toFixed(
-                      2,
-                    ) + " km/h"
+                    2,
+                  ) + " km/h"
                   : ""}
               </p>
             </CardContent>
@@ -304,10 +304,10 @@ export function TelemetryOverview() {
               <p className="text-xs text-muted-foreground">
                 {attitude
                   ? "P: " +
-                    (attitude.pitch * (180 / Math.PI)).toFixed(1) +
-                    "° Y: " +
-                    (attitude.yaw * (180 / Math.PI)).toFixed(1) +
-                    "°"
+                  (attitude.pitch * (180 / Math.PI)).toFixed(1) +
+                  "° Y: " +
+                  (attitude.yaw * (180 / Math.PI)).toFixed(1) +
+                  "°"
                   : ""}
               </p>
             </CardContent>

@@ -66,13 +66,13 @@ export default function DashboardSafeSpot() {
     return Math.sqrt(Math.pow(pos1.x - pos2.x, 2) + Math.pow(pos1.y - pos2.y, 2))
   }
 
-  // Convert GPS coordinates to local field coordinates
-  const gpsToFieldCoords = (gpsCoords: { lat: number, lng: number }, arena: ArenaCorner[]): { x: number, y: number } => {
+  // Convert coordinates to local field coordinates
+  const coordsToFieldCoords = (coords: { lat: number, lng: number }, arena: ArenaCorner[]): { x: number, y: number } => {
     if (arena.length < 4) {
       // Fallback to simple conversion if arena not available
       return {
-        x: Math.max(0, Math.min(9, (gpsCoords.lat - 12.03) * 1000)),
-        y: Math.max(0, Math.min(12, (gpsCoords.lng - 77.12) * 1000))
+        x: Math.max(0, Math.min(9, (coords.lat - 12.03) * 1000)),
+        y: Math.max(0, Math.min(12, (coords.lng - 77.12) * 1000))
       }
     }
 
@@ -82,9 +82,9 @@ export default function DashboardSafeSpot() {
     const minLng = Math.min(...arena.map(c => c.lng))
     const maxLng = Math.max(...arena.map(c => c.lng))
 
-    // Convert GPS to normalized coordinates (0-1)
-    const normalizedX = (gpsCoords.lng - minLng) / (maxLng - minLng)
-    const normalizedY = (gpsCoords.lat - minLat) / (maxLat - minLat)
+    // Convert coordinates to normalized coordinates (0-1)
+    const normalizedX = (coords.lng - minLng) / (maxLng - minLng)
+    const normalizedY = (coords.lat - minLat) / (maxLat - minLat)
 
     // Scale to field dimensions (9x12 meters)
     return {
@@ -166,19 +166,19 @@ export default function DashboardSafeSpot() {
         if (globalResponse.ok) {
           const globalData = await globalResponse.json()
           if (globalData && (globalData.lat !== 0 || globalData.lon !== 0)) {
-            // If we have Jetson arena data, use proper GPS conversion
+            // If we have Jetson arena data, use proper coordinate conversion
             if (jetsonData?.arena && jetsonData.arena.length >= 4) {
-              const gpsPos = { lat: globalData.lat / 1e7, lng: globalData.lon / 1e7 }
-              const fieldPos = gpsToFieldCoords(gpsPos, jetsonData.arena)
+              const coordsPos = { lat: globalData.lat / 1e7, lng: globalData.lon / 1e7 }
+              const fieldPos = coordsToFieldCoords(coordsPos, jetsonData.arena)
               setCurrentPosition(fieldPos)
             } else {
-              // Fallback GPS conversion
+              // Fallback coordinate conversion
               const fieldX = Math.max(0, Math.min(9, (globalData.lat / 1000000) % 9))
               const fieldY = Math.max(0, Math.min(12, (globalData.lon / 1000000) % 12))
               setCurrentPosition({ x: fieldX, y: fieldY })
             }
 
-            setConnectionStatus(`GPS Data - Global (${globalData.time_boot_ms}ms)`)
+            setConnectionStatus(`Position Data - Global (${globalData.time_boot_ms}ms)`)
 
             setPositionHistory(prev => {
               const newHistory = [...prev, currentPosition]
@@ -226,8 +226,8 @@ export default function DashboardSafeSpot() {
     if (!jetsonData?.safeSpots) return
 
     jetsonData.safeSpots.forEach(spot => {
-      // Convert GPS safe spot to field coordinates
-      const spotFieldCoords = gpsToFieldCoords(spot, jetsonData.arena)
+      // Convert coordinate safe spot to field coordinates
+      const spotFieldCoords = coordsToFieldCoords(spot, jetsonData.arena)
       const distance = calculateDistance(currentPosition, spotFieldCoords)
 
       if (distance <= DETECTION_THRESHOLD && !detectedSpots.includes(spot.id)) {
@@ -240,7 +240,7 @@ export default function DashboardSafeSpot() {
             alert(`� MISSION COMPLETE!\n\nAll 3 Safe Spots Detected!\n\nCongratulations! You have successfully completed the safe spot detection mission.`)
           } else {
             console.log(`�🎯 ${spot.id} Detected! Distance: ${distance.toFixed(2)}m (${newDetected.length}/3 complete)`)
-            alert(`🎯 SAFE SPOT DETECTED!\n\n${spot.id}\nDistance: ${distance.toFixed(2)}m\nGPS: (${spot.lat.toFixed(6)}, ${spot.lng.toFixed(6)})\n\nProgress: ${newDetected.length}/3 safe spots`)
+            alert(`🎯 SAFE SPOT DETECTED!\n\n${spot.id}\nDistance: ${distance.toFixed(2)}m\nCoordinates: (${spot.lat.toFixed(6)}, ${spot.lng.toFixed(6)})\n\nProgress: ${newDetected.length}/3 safe spots`)
           }
 
           return newDetected
@@ -249,7 +249,7 @@ export default function DashboardSafeSpot() {
     })
   }, [currentPosition, jetsonData, detectedSpots])
 
-  // Convert arena GPS coordinates to field coordinates for visualization
+  // Convert arena coordinates to field coordinates for visualization
   const getArenaFieldCoords = () => {
     if (!jetsonData?.arena || jetsonData.arena.length < 4) return []
 
@@ -347,7 +347,7 @@ export default function DashboardSafeSpot() {
 
                 {/* Dynamic Safe spots from Jetson */}
                 {jetsonData?.safeSpots?.map(spot => {
-                  const spotCoords = gpsToFieldCoords(spot, jetsonData.arena)
+                  const spotCoords = coordsToFieldCoords(spot, jetsonData.arena)
                   const isDetected = detectedSpots.includes(spot.id)
                   const isOutsideArena = spotCoords.x < 0 || spotCoords.x > 9 || spotCoords.y < 0 || spotCoords.y > 12
 

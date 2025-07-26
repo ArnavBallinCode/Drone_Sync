@@ -48,80 +48,17 @@ pip install pymavlink
 
 ```
 SkySync_Gcs-1.1/
-├──  app/                     # Next.js 13+ App Directory (Main Application)
-│   ├── globals.css            # Global Tailwind CSS styles
-│   ├── layout.tsx             # Root layout wrapper for all pages
-│   ├── page.tsx               #  MAIN DASHBOARD (/) - Primary interface
-│   ├── history/               #  History & Analytics Section
-│   │   └── page.tsx          # History analysis page with charts & downloads
-│   └── api/                   #  Backend API Routes (Next.js Server Functions)
-│       ├── history-data/      # Telemetry collection & history management
-│       │   └── route.ts      # Handles data collection, storage, download, clear
-│       ├── jetson-data/       # Jetson device integration
-│       │   └── route.ts      # SCP fetch for arena & safe spot data
-│       ├── logs/              # System logs API
-│       │   └── route.ts      # Log file access
-│       └── status-text/       # Jetson events/status
-│           └── route.ts      # SCP fetch for events data
-│
-├──  components/             # Reusable React Components
-│   ├── ui/                   # Shadcn/UI component library
-│   │   ├── alert.tsx        # Alert notifications
-│   │   ├── badge.tsx        # Status badges
-│   │   ├── button.tsx       # Interactive buttons
-│   │   ├── card.tsx         # Container cards
-│   │   ├── select.tsx       # Dropdown selectors
-│   │   ├── tabs.tsx         # Tab navigation
-│   │   └── toast.tsx        # Toast notifications
-│   ├── auto-collect-button.tsx    # Auto-collection toggle control
-│   ├── dashboard-header.tsx       # Main dashboard header
-│   ├── dashboard-layout.tsx       # Dashboard layout wrapper
-│   ├── dashboard-livedata.tsx     # Live telemetry display
-│   ├── dashboard-parameters.tsx   # Parameter monitoring
-│   ├── dashboard-safespot.tsx     #  Safe spot visualization & arena
-│   ├── main-layout.tsx            # Overall app layout
-│   ├── mode-toggle.tsx            # Dark/light theme toggle
-│   ├── navigation.tsx             # Navigation menu
-│   ├── telemetry-overview.tsx     # Telemetry summary cards
-│   └── theme-provider.tsx         # Theme context provider
-│
-├── 🔗 contexts/               # React Context (Global State)
-│   └── auto-collect-context.tsx  # Global auto-collect state management
-│
-├──  hooks/                  # Custom React Hooks
-│   ├── use-mobile.tsx        # Mobile device detection
-│   └── use-toast.ts          # Toast notification hook
-│
-├──  lib/                    # Utility Libraries
-│   ├── api.ts               # API helper functions
-│   └── utils.ts             # Common utility functions
-│
-├──  public/                # Static Files & Data Storage
-│   ├── params/              # 📡 LIVE telemetry data (JSON files)
-│   │   ├── attitude.json    # Real-time attitude data
-│   │   ├── battery_status.json    # Battery information
-│   │   ├── global_position_int.json # Position data
-│   │   ├── heartbeat.json         # System heartbeat
-│   │   ├── local_position_ned.json # NED coordinates
-│   │   ├── raw_imu.json          # IMU sensor data
-│   │   ├── rangefinder.json      # Distance sensor data
-│   │   └── scaled_imu2.json      # Secondary IMU data
-│   ├── params_history/       # 📊 Historical data storage
-│   │   └── telemetry_*.json  # Timestamped history files
-│   └── [static assets]       # Images, icons, etc.
-│
-├──  Python Backend         # MAVLink Communication Layer
-│   ├── listen.py            # 🔌 MAIN MAVLink listener & JSON generator
-│   ├── server.py            # Alternative Python server
-│   └── start_all.sh         # 🚀 Automated startup script
-│
-└──  Configuration Files
-    ├── package.json         # Node.js dependencies & scripts
-    ├── tsconfig.json        # TypeScript configuration
-    ├── tailwind.config.ts   # Tailwind CSS configuration
-    ├── next.config.mjs      # Next.js configuration
-    └── components.json      # Shadcn/UI configuration
-
+├── app/                    # Next.js app directory
+│   ├── page.tsx           # Main dashboard
+│   ├── history/           # History and analytics page
+│   └── api/               # API routes for data handling
+├── components/            # React components
+├── public/
+│   ├── params/           # Live telemetry data (JSON files)
+│   └── params_history/   # Historical data storage
+├── listen.py             # MAVLink telemetry listener
+├── server.py             # Alternative Python server
+└── start_all.sh          # Automated startup script
 ```
 
 ## Usage
