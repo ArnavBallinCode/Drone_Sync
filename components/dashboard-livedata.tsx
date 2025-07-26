@@ -66,23 +66,23 @@ export default function LiveMonitoringPanel() {
   const DETECTION_THRESHOLD = 0.5
 
   // Calculate distance between two points
-  const calculateDistance = (pos1: {x: number, y: number}, pos2: {x: number, y: number}) =>
+  const calculateDistance = (pos1: { x: number, y: number }, pos2: { x: number, y: number }) =>
     Math.sqrt(Math.pow(pos1.x - pos2.x, 2) + Math.pow(pos1.y - pos2.y, 2))
 
   // Convert  coordinates to local field coordinates
-  const gpsToFieldCoords = (gpsCoords: { lat: number, lng: number }, arena: ArenaCorner[]): { x: number, y: number } => {
+  const coordsToFieldCoords = (coords: { lat: number, lng: number }, arena: ArenaCorner[]): { x: number, y: number } => {
     if (arena.length < 4) {
       return {
-        x: Math.max(0, Math.min(9, (gpsCoords.lat - 12.03) * 1000)),
-        y: Math.max(0, Math.min(12, (gpsCoords.lng - 77.12) * 1000))
+        x: Math.max(0, Math.min(9, (coords.lat - 12.03) * 1000)),
+        y: Math.max(0, Math.min(12, (coords.lng - 77.12) * 1000))
       }
     }
     const minLat = Math.min(...arena.map(c => c.lat))
     const maxLat = Math.max(...arena.map(c => c.lat))
     const minLng = Math.min(...arena.map(c => c.lng))
     const maxLng = Math.max(...arena.map(c => c.lng))
-    const normalizedX = (gpsCoords.lng - minLng) / (maxLng - minLng)
-    const normalizedY = (gpsCoords.lat - minLat) / (maxLat - minLat)
+    const normalizedX = (coords.lng - minLng) / (maxLng - minLng)
+    const normalizedY = (coords.lat - minLat) / (maxLat - minLat)
     return {
       x: Math.max(0, Math.min(9, normalizedX * 9)),
       y: Math.max(0, Math.min(12, normalizedY * 12))
@@ -139,7 +139,7 @@ export default function LiveMonitoringPanel() {
   useEffect(() => {
     if (!jetsonData?.safeSpots) return
     jetsonData.safeSpots.forEach(spot => {
-      const spotFieldCoords = gpsToFieldCoords(spot, jetsonData.arena)
+      const spotFieldCoords = coordsToFieldCoords(spot, jetsonData.arena)
       const distance = calculateDistance(currentPosition, spotFieldCoords)
       if (distance <= DETECTION_THRESHOLD && !detectedSpots.includes(spot.id)) {
         setDetectedSpots(prev => [...prev, spot.id])
@@ -149,7 +149,7 @@ export default function LiveMonitoringPanel() {
 
   return (
     <Card>
-      <CardHeader  className="py-2 px-3">
+      <CardHeader className="py-2 px-3">
         <CardTitle className="text-base font-semibold">Live Monitoring</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -170,9 +170,7 @@ export default function LiveMonitoringPanel() {
           </div>
         )}
 
-       
 
-    
       </CardContent>
     </Card>
   )
