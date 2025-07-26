@@ -47,7 +47,7 @@ Example `events.txt`:
 ```
 Drone Status: Flying
 Battery: 92%
-GPS Lock: Active
+Lock: Active
 Altitude: 145m
 Speed: 18 m/s
 Temperature: 24°C
