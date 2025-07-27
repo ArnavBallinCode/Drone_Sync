@@ -8,8 +8,9 @@ git clone https://github.com/ArnavBallinCode/Drone_Sync.git
 cd Drone_Sync
 
 # Install Node.js dependencies
-npm install
+npm install --legacy-peer-deps
 ```
+
 
 ### 2. Python Environment Setup
 
