@@ -75,26 +75,40 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
               Z Position vs Time (Height Above Ground)
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-3 flex-1 flex flex-col">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="timestamp" />
-                <YAxis />
-                <Tooltip
-                  labelFormatter={(value) => `Time: ${value}`}
-                  formatter={(value: number) => [value.toFixed(3) + ' m', 'Height Above Ground']}
-                />
-                <Area
-                  type="monotone"
-                  dataKey="z"
-                  stroke="#8884d8"
-                  fill="#8884d8"
-                  fillOpacity={0.3}
-                  strokeWidth={2}
-                />
-              </AreaChart>
-            </ResponsiveContainer>
+          <CardContent className="p-3 flex-1 flex flex-col" style={{ minHeight: '350px' }}>
+            <div className="w-full h-full" style={{ minHeight: '300px' }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={chartData} margin={{ top: 10, right: 30, left: 20, bottom: 20 }}>
+                  <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
+                  <XAxis 
+                    dataKey="timestamp" 
+                    tick={{ fontSize: 12 }}
+                    interval="preserveStartEnd"
+                  />
+                  <YAxis 
+                    tick={{ fontSize: 12 }}
+                    label={{ value: 'Height (m)', angle: -90, position: 'insideLeft' }}
+                  />
+                  <Tooltip
+                    labelFormatter={(value) => `Time: ${value}`}
+                    formatter={(value: number) => [value.toFixed(3) + ' m', 'Height Above Ground']}
+                    contentStyle={{ 
+                      backgroundColor: 'rgba(255, 255, 255, 0.95)', 
+                      border: '1px solid #ccc',
+                      borderRadius: '4px'
+                    }}
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="z"
+                    stroke="#2563eb"
+                    fill="#3b82f6"
+                    fillOpacity={0.2}
+                    strokeWidth={2}
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
           </CardContent>
         </Card>
       )}

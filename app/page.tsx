@@ -118,14 +118,14 @@ export default function DashboardPage() {
                 />
               </div>
             </section>
-            {/* Bottom Full-width Section: Z vs Time chart shifted further down and made taller */}
-            <section className="col-span-4 bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 500, marginTop: 24 }}>
+            {/* Bottom Full-width Section: Z vs Time chart */}
+            <section className="col-span-4 bg-white flex flex-col h-full w-full" style={{ minHeight: '400px', height: '500px' }}>
               <ZvsTimeChart data={graphData} />
             </section>
           </div>
         ) : (
           <div className="h-full w-full border border-gray-300">
-            <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 600 }}>
+            <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: '400px', height: '500px' }}>
               <ZvsTimeChart />
             </section>
           </div>
