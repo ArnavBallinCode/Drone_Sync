@@ -47,19 +47,13 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
   const generateSystemTimeData = () => {
     const baseData = data || historyData;
 
-    // If no data, create dummy data with current system time
+    // If no data, return single 0.0 point
     if (baseData.length === 0) {
-      const dummyData = [];
-      const now = new Date();
-      for (let i = 0; i < 20; i++) {
-        const time = new Date(now.getTime() - (19 - i) * 5000); // 5 second intervals
-        dummyData.push({
-          timestamp: time.toLocaleTimeString(),
-          z: 0,
-          fullTime: time.toISOString()
-        });
-      }
-      return dummyData;
+      return [{
+        timestamp: new Date().toLocaleTimeString(),
+        z: 0.0,
+        fullTime: new Date().toISOString()
+      }];
     }
 
     // Use real data with actual timestamps
@@ -70,7 +64,9 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
     }));
   };
 
-  const chartData = generateSystemTimeData(); return (
+  const chartData = generateSystemTimeData();
+
+  return (
     <div className="h-full w-full flex flex-col">
       {!data && loading ? (
         <div className="text-center text-muted-foreground p-8">Loading...</div>

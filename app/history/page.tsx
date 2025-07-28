@@ -157,43 +157,37 @@ export default function HistoryAnalysisPage() {
     return historyData.filter(item => new Date(item.timestamp) >= cutoff)
   }
 
-  // Prepare chart data with dummy data fallback
+  // Prepare chart data
   const prepareChartData = () => {
     const filtered = getFilteredData()
 
-    // If no data, create dummy data for demonstration
+    // If no data, return single 0.0 point
     if (filtered.length === 0) {
-      const dummyData = []
-      const now = new Date()
-      for (let i = 0; i < 20; i++) {
-        const time = new Date(now.getTime() - (19 - i) * 5000) // 5 second intervals
-        dummyData.push({
-          index: i,
-          timestamp: time.toLocaleTimeString(),
-          fullTime: time.toISOString(),
-          x: 0,
-          y: 0,
-          z: 0,
-          altitude: 0,
-          roll: 0,
-          pitch: 0,
-          yaw: 0,
-          vx: 0,
-          vy: 0,
-          vz: 0,
-          voltage: 0,
-          current: 0,
-          batteryRemaining: 0,
-          xacc: 0,
-          yacc: 0,
-          zacc: 0,
-          xgyro: 0,
-          ygyro: 0,
-          zgyro: 0,
-          distance: 0
-        })
-      }
-      return dummyData
+      return [{
+        index: 0,
+        timestamp: new Date().toLocaleTimeString(),
+        fullTime: new Date().toISOString(),
+        x: 0.0,
+        y: 0.0,
+        z: 0.0,
+        altitude: 0.0,
+        roll: 0.0,
+        pitch: 0.0,
+        yaw: 0.0,
+        vx: 0.0,
+        vy: 0.0,
+        vz: 0.0,
+        voltage: 0.0,
+        current: 0.0,
+        batteryRemaining: 0.0,
+        xacc: 0.0,
+        yacc: 0.0,
+        zacc: 0.0,
+        xgyro: 0.0,
+        ygyro: 0.0,
+        zgyro: 0.0,
+        distance: 0.0
+      }];
     }
 
     return filtered.map((item, index) => ({

@@ -7,30 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { RefreshCw, Wifi, WifiOff, MapPin, Clock } from "lucide-react"
 
-// --- Types and Simulator ---
-
-export class PositionSimulator {
-  private x: number;
-  private y: number;
-  private radius: number;
-  private angle: number;
-  private angleIncrement: number;
-
-  constructor() {
-    this.x = 0;
-    this.y = 0;
-    this.radius = 4;
-    this.angle = 0;
-    this.angleIncrement = 0.02;
-  }
-
-  update(): { x: number; y: number } {
-    this.angle += this.angleIncrement;
-    this.x = this.radius * Math.sin(this.angle) + 4.5;
-    this.y = this.radius * Math.cos(this.angle) + 6;
-    return { x: this.x, y: this.y };
-  }
-}
+// --- Types ---
 
 interface ArenaCorner {
   lat: number
@@ -61,7 +38,6 @@ export default function LiveMonitoringPanel() {
   const [lastJetsonUpdate, setLastJetsonUpdate] = useState<string>('')
   const [loading, setLoading] = useState(false)
   const [detectedSpots, setDetectedSpots] = useState<string[]>([])
-  const simulatorRef = useRef(new PositionSimulator())
 
   const DETECTION_THRESHOLD = 0.5
 
@@ -108,19 +84,28 @@ export default function LiveMonitoringPanel() {
     }
   }
 
-  // Fetch current position (simulated for demo)
+  // Fetch current position (real data only)
   useEffect(() => {
     const fetchPositionData = async () => {
       try {
-        // Simulate fetching position
-        const simulatedPos = simulatorRef.current.update()
-        setCurrentPosition(simulatedPos)
-        setConnectionStatus('Simulated Data')
+        // Try to fetch real position data
+        const response = await fetch('/api/position-data', { cache: 'no-store' })
+        if (response.ok) {
+          const data = await response.json()
+          if (data.status === 'success' && data.position) {
+            setCurrentPosition(data.position)
+            setConnectionStatus('Real Data')
+            return
+          }
+        }
+
+        // If no real data available, set to origin
+        setCurrentPosition({ x: 0, y: 0 })
+        setConnectionStatus('No Data')
       } catch {
-        // fallback
-        const simulatedPos = simulatorRef.current.update()
-        setCurrentPosition(simulatedPos)
-        setConnectionStatus('Simulated Data')
+        // If fetch fails, set to origin
+        setCurrentPosition({ x: 0, y: 0 })
+        setConnectionStatus('No Data')
       }
     }
     fetchPositionData()

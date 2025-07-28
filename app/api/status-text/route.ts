@@ -6,9 +6,9 @@ import path from 'path';
 const execAsync = promisify(exec);
 
 // Jetson SCP config
-const JETSON_USER = 'arnavangarkar';
-const JETSON_HOST = '192.168.1.4'; // Your test Mac IP
-const REMOTE_PATH = '/Users/arnavangarkar/safe_spots/events.txt';
+const JETSON_USER = 'ses';
+const JETSON_HOST = '10.0.8.81'; // Correct Jetson IP
+const REMOTE_PATH = '/home/ses/Desktop/safe_spots/events.txt';
 const LOCAL_PATH = path.join(process.cwd(), 'public', 'params', 'status.txt');
 
 export async function GET() {

@@ -7,27 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { RefreshCw, Wifi, WifiOff, MapPin, Clock } from "lucide-react"
 
-// Position simulator for testing
-class PositionSimulator {
-  x = 1.5
-  y = 1.2
-  vx = 0.2
-  vy = 0.15
-  radius = 2
-  angle = 0
-
-  update() {
-    this.angle += 0.02
-    this.x = 1.5 + this.radius * Math.cos(this.angle)
-    this.y = 1.2 + this.radius * Math.sin(this.angle * 0.7)
-
-    this.x = Math.max(-4, Math.min(4, this.x))
-    this.y = Math.max(-3, Math.min(3, this.y))
-
-    return { x: this.x, y: this.y }
-  }
-}
-
 interface ArenaCorner {
   lat: number
   lng: number
@@ -56,7 +35,6 @@ export default function DashboardSafeSpot() {
   const [jetsonStatus, setJetsonStatus] = useState<'connected' | 'disconnected' | 'error'>('disconnected')
   const [lastJetsonUpdate, setLastJetsonUpdate] = useState<string>('')
   const [loading, setLoading] = useState(false)
-  const simulatorRef = useRef(new PositionSimulator())
 
   // Detection threshold (0.5 meters)
   const DETECTION_THRESHOLD = 0.5
@@ -93,16 +71,15 @@ export default function DashboardSafeSpot() {
     }
   }
 
-  // Fetch data from Jetson device
-  const fetchJetsonData = async (useMockData = false) => {
+  // Fetch data from Jetson device - live data only
+  const fetchJetsonData = async () => {
     // Don't show loading for subsequent fetches to prevent flickering
     if (!jetsonData) setLoading(true)
     try {
       const endpoint = '/api/jetson-data'
-      const method = useMockData ? 'POST' : 'GET'
 
       const response = await fetch(endpoint, {
-        method,
+        method: 'GET',
         cache: 'no-store',
         headers: {
           'Cache-Control': 'no-cache'
@@ -189,17 +166,16 @@ export default function DashboardSafeSpot() {
           }
         }
 
-        // If both fail, use simulated data
+        // If both fail, set to default no-data state
         throw new Error('No real data available')
 
       } catch (error) {
         console.error('Error fetching position data:', error)
-        const simulatedPos = simulatorRef.current.update()
-        setCurrentPosition(simulatedPos)
-        setConnectionStatus('Simulated Data')
+        setCurrentPosition({ x: 0, y: 0 })
+        setConnectionStatus('No Data')
 
         setPositionHistory(prev => {
-          const newHistory = [...prev, simulatedPos]
+          const newHistory = [...prev, { x: 0, y: 0 }]
           return newHistory.slice(-10)
         })
       }

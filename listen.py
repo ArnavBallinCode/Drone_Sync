@@ -1,5 +1,9 @@
 import json
 import os
+import signal
+import sys
+import atexit
+import glob
 from pymavlink import mavutil
 import time
 import argparse
@@ -14,6 +18,27 @@ args = parser.parse_args()
 
 PARAMS_DIR = os.path.join('public', 'params')
 os.makedirs(PARAMS_DIR, exist_ok=True)
+
+def cleanup_json_files():
+    """Remove all JSON files from params directory"""
+    try:
+        json_files = glob.glob(os.path.join(PARAMS_DIR, '*.json'))
+        for file_path in json_files:
+            os.remove(file_path)
+        print(f"Cleaned up {len(json_files)} JSON files")
+    except Exception as e:
+        print(f"Error cleaning up files: {e}")
+
+def signal_handler(signum, frame):
+    """Handle Ctrl+C gracefully"""
+    print("\nReceived interrupt signal. Cleaning up...")
+    cleanup_json_files()
+    sys.exit(0)
+
+# Register signal handlers and cleanup
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
+atexit.register(cleanup_json_files)
 
 def create_mavlink_connection(connection_str, baud_rate):
     try:
@@ -72,19 +97,30 @@ def monitor_messages(master):
             write_to_json(data, message_types[msg_type])
 
 def main():
+    print("Starting MAVLink listener...")
+    print("Press Ctrl+C to stop and clean up files")
+    
+    # Clean up any existing files first
+    cleanup_json_files()
+    
     master = create_mavlink_connection(args.connection, args.baud)
     if not master or not check_heartbeat(master):
+        print("Failed to establish connection or heartbeat")
         return
 
     request_data_streams(master)
+    print("MAVLink connection established, generating JSON files...")
 
     try:
         while True:
             monitor_messages(master)
     except KeyboardInterrupt:
-        pass
+        print("\nKeyboard interrupt received")
     except Exception as e:
         print(f"Error in main loop: {e}")
+    finally:
+        print("Cleaning up and exiting...")
+        cleanup_json_files()
 
 if __name__ == "__main__":
     main()

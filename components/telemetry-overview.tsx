@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowUp, Battery, Gauge, Thermometer } from "lucide-react"
@@ -20,8 +20,7 @@ const PARAM_TYPES = [
   "SCALED_IMU2",
 ]
 
-// Flight data simulator for realistic values
-export class FlightDataSimulator {
+export function TelemetryOverview() {
   // Position data
   x = 0
   y = 0
@@ -160,7 +159,6 @@ export function TelemetryOverview() {
   const [attitude, setAttitude] = useState<any>(null)
   const [battery, setBattery] = useState<any>(null)
   const [globalPosition, setGlobalPosition] = useState<any>(null)
-  const flightSimulator = useRef(new FlightDataSimulator())
 
   useEffect(() => {
     // Function to fetch parameter data or generate realistic simulated data
@@ -205,22 +203,20 @@ export function TelemetryOverview() {
           setGlobalPosition(globalPositionData)
         }
 
-        // If any fetch failed, use simulated data
+        // If any fetch failed, set to null (will show 0.0 values)
         if (useSimulatedData) {
-          const simulatedData = flightSimulator.current.update()
-          setLocalPosition(simulatedData.localPosition)
-          setAttitude(simulatedData.attitude)
-          setBattery(simulatedData.battery)
-          setGlobalPosition(simulatedData.globalPosition)
+          setLocalPosition(null)
+          setAttitude(null)
+          setBattery(null)
+          setGlobalPosition(null)
         }
       } catch (error) {
         console.error("Error fetching parameter data:", error)
-        // Generate realistic simulated data if fetch fails
-        const simulatedData = flightSimulator.current.update()
-        setLocalPosition(simulatedData.localPosition)
-        setAttitude(simulatedData.attitude)
-        setBattery(simulatedData.battery)
-        setGlobalPosition(simulatedData.globalPosition)
+        // Set to null if fetch fails (will show 0.0 values)
+        setLocalPosition(null)
+        setAttitude(null)
+        setBattery(null)
+        setGlobalPosition(null)
       }
     }
 

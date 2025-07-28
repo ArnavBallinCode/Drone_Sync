@@ -1,100 +1,29 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowUp, Axis3D, Battery, Cpu, CpuIcon, Gauge, MemoryStick, Plane, Store, Thermometer } from "lucide-react"
-import { TelemetryOverview } from "./telemetry-overview"
 import { useTelemetryData } from "@/app/hooks/useTelemetryData"
 import { Progress } from "@/components/ui/progress"
-import { FlightDataSimulator } from "./telemetry-overview"
 
 export function DashboardParameters() {
-  const [localPosition, setLocalPosition] = useState<any>(null)
-  const [attitude, setAttitude] = useState<any>(null)
-  const [battery, setBattery] = useState<any>(null)
-  const [globalPosition, setGlobalPosition] = useState<any>(null)
-  const flightSimulator = useRef(new FlightDataSimulator())
-  const data = useTelemetryData()
+  const { data, isConnected } = useTelemetryData()
 
-  useEffect(() => {
-    // Function to fetch parameter data or generate realistic simulated data
-    const fetchParameterData = async () => {
-      try {
-        // Try to fetch real data first
-        let useSimulatedData = false
-
-        // Fetch LOCAL_POSITION_NED
-        const localPositionRes = await fetch(`/params/LOCAL_POSITION_NED.json?t=${Date.now()}`)
-        if (!localPositionRes.ok) {
-          useSimulatedData = true
-        } else {
-          const localPositionData = await localPositionRes.json()
-          setLocalPosition(localPositionData)
-        }
-
-        // Fetch ATTITUDE
-        const attitudeRes = await fetch(`/params/ATTITUDE.json?t=${Date.now()}`)
-        if (!attitudeRes.ok) {
-          useSimulatedData = true
-        } else {
-          const attitudeData = await attitudeRes.json()
-          setAttitude(attitudeData)
-        }
-
-        // Fetch BATTERY_STATUS
-        const batteryRes = await fetch(`/params/BATTERY_STATUS.json?t=${Date.now()}`)
-        if (!batteryRes.ok) {
-          useSimulatedData = true
-        } else {
-          const batteryData = await batteryRes.json()
-          setBattery(batteryData)
-        }
-
-        // Fetch GLOBAL_POSITION_INT
-        const globalPositionRes = await fetch(`/params/GLOBAL_POSITION_INT.json?t=${Date.now()}`)
-        if (!globalPositionRes.ok) {
-          useSimulatedData = true
-        } else {
-          const globalPositionData = await globalPositionRes.json()
-          setGlobalPosition(globalPositionData)
-        }
-
-        // If any fetch failed, use simulated data
-        if (useSimulatedData) {
-          const simulatedData = flightSimulator.current.update()
-          setLocalPosition(simulatedData.localPosition)
-          setAttitude(simulatedData.attitude)
-          setBattery(simulatedData.battery)
-          setGlobalPosition(simulatedData.globalPosition)
-        }
-      } catch (error) {
-        console.error("Error fetching parameter data:", error)
-        // Generate realistic simulated data if fetch fails
-        const simulatedData = flightSimulator.current.update()
-        setLocalPosition(simulatedData.localPosition)
-        setAttitude(simulatedData.attitude)
-        setBattery(simulatedData.battery)
-        setGlobalPosition(simulatedData.globalPosition)
-      }
-    }
-
-    // Initial fetch
-    fetchParameterData()
-
-    // Set up interval for periodic updates
-    const intervalId = setInterval(fetchParameterData, 1000)
-
-    // Clean up interval on component unmount
-    return () => clearInterval(intervalId)
-  }, [])
-
+  // Use data from the centralized hook
+  const localPosition = data.local_position
+  const attitude = data.attitude
+  const battery = data.battery
+  const globalPosition = data.local_position // Use local position for altitude calculation
 
   return (
     <div className="h-full flex flex-col">
       <Card className="h-full flex flex-col">
         <CardHeader className="py-2 px-3 flex-shrink-0">
-          <CardTitle className="text-lg font-semibold">Flight Parameters</CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-lg font-semibold">Flight Parameters</CardTitle>
+            <div className={`h-2 w-2 rounded-full ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}
+              title={isConnected ? 'Connected' : 'Disconnected'}></div>
+          </div>
         </CardHeader>
         <CardContent className="p-0 flex-1 flex flex-col">
           <Tabs defaultValue="overview" className="h-full flex flex-col">
@@ -145,7 +74,7 @@ export function DashboardParameters() {
                   </CardHeader>
                   <CardContent className="px-2 py-0">
                     <div className="text-base font-medium">
-                      {globalPosition ? (-globalPosition.relative_alt / 1000).toFixed(2) + " m" : "0.00 m"}
+                      {globalPosition ? (-globalPosition.z).toFixed(2) + " m" : "0.00 m"}
                     </div>
                     <p className="text-xs text-muted-foreground">Relative to home</p>
                   </CardContent>
@@ -178,13 +107,13 @@ export function DashboardParameters() {
                   <CardContent className="px-2 py-0">
                     <div className="text-base font-medium">
                       {globalPosition
-                        ? (Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) / 100).toFixed(2) +
+                        ? Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)).toFixed(2) +
                         " m/s"
                         : "0.00 m/s"}
                     </div>
                     <p className="text-xs text-muted-foreground">
                       {globalPosition
-                        ? ((Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) / 100) * 3.6).toFixed(
+                        ? (Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) * 3.6).toFixed(
                           2,
                         ) + " km/h"
                         : "0.00 km/h"}
