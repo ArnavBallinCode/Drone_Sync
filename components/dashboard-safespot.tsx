@@ -266,15 +266,15 @@ export default function DashboardSafeSpot() {
 
   const arenaFieldCoords = getArenaFieldCoords()
   return (
-    <div className="space-y-6">
+    <div className="h-full flex flex-col">
 
       {/* Dynamic Field Visualization */}
-      <Card className="md:col-span-1">
-        <CardHeader className="py-2 px-3">
+      <Card className="md:col-span-1 h-full flex flex-col">
+        <CardHeader className="py-2 px-3 flex-shrink-0">
           <CardTitle className="text-lg font-semibold">Live Arena & Safe Spots</CardTitle>
         </CardHeader>
-        <CardContent className="p-0">
-          <div className="aspect-[3/4] h-[590px] relative bg-green-50 dark:bg-green-950 border">
+        <CardContent className="p-0 flex-1 flex flex-col">
+          <div className="flex-1 relative bg-green-50 dark:bg-green-950">
             <svg width="100%" height="100%" viewBox="-1 -1 11 14" className="absolute inset-0" preserveAspectRatio="xMidYMid meet">
               {/* Clipping definition - prevents any shifting of map */}
               <defs>

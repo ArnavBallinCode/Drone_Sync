@@ -148,30 +148,32 @@ export default function LiveMonitoringPanel() {
   }, [currentPosition, jetsonData, detectedSpots])
 
   return (
-    <Card>
-      <CardHeader className="py-2 px-3">
-        <CardTitle className="text-base font-semibold">Live Monitoring</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        {/* Jetson Data Info */}
-        {jetsonData && (
-          <div>
-            <h3 className="text-base font-semibold mb-2 flex items-center gap-2">
-              <MapPin className="w-5 h-5" />
-              Jetson Data
-            </h3>
-            <div className="grid grid-cols-2 gap-2 text-sm font-mono bg-gray-50 p-3 rounded">
-              <div>Arena Corners: {jetsonData.arena.length}</div>
-              <div>Safe Spots: {jetsonData.safeSpots.length}</div>
-              <div className="col-span-2 text-xs mt-2">
-                Last fetch: {new Date(jetsonData.timestamp).toLocaleString()}
+    <div className="h-full flex flex-col">
+      <Card className="h-full flex flex-col">
+        <CardHeader className="py-2 px-3 flex-shrink-0">
+          <CardTitle className="text-lg font-semibold">Live Monitoring</CardTitle>
+        </CardHeader>
+        <CardContent className="p-3 flex-1 flex flex-col space-y-6">
+          {/* Jetson Data Info */}
+          {jetsonData && (
+            <div>
+              <h3 className="text-base font-semibold mb-2 flex items-center gap-2">
+                <MapPin className="w-5 h-5" />
+                Jetson Data
+              </h3>
+              <div className="grid grid-cols-2 gap-2 text-sm font-mono bg-gray-50 p-3 rounded">
+                <div>Arena Corners: {jetsonData.arena.length}</div>
+                <div>Safe Spots: {jetsonData.safeSpots.length}</div>
+                <div className="col-span-2 text-xs mt-2">
+                  Last fetch: {new Date(jetsonData.timestamp).toLocaleString()}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
 
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   )
 }

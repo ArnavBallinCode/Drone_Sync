@@ -52,24 +52,31 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
   return (
     <div className="h-full w-full flex flex-col">
       {!data && loading ? (
-        <div className="text-center text-muted-foreground">Loading...</div>
+        <div className="text-center text-muted-foreground p-8">Loading...</div>
       ) : chartData.length === 0 ? (
-        <Alert>
-          <AlertTitle>No Historical Data</AlertTitle>
-          <AlertDescription>
-            No telemetry data found. Start data collection to view Z vs Time analysis.
-          </AlertDescription>
-        </Alert>
+        <Card className="h-full flex flex-col">
+          <CardHeader className="py-2 px-3 flex-shrink-0">
+            <CardTitle className="text-lg font-semibold">Z Position vs Time</CardTitle>
+          </CardHeader>
+          <CardContent className="p-3 flex-1 flex flex-col justify-center">
+            <Alert>
+              <AlertTitle>No Historical Data</AlertTitle>
+              <AlertDescription>
+                No telemetry data found. Start data collection to view Z vs Time analysis.
+              </AlertDescription>
+            </Alert>
+          </CardContent>
+        </Card>
       ) : (
-        <Card>
-          <CardHeader className="py-2 px-3">
-            <CardTitle className="flex items-center gap-2 text-base font-semibold">
+        <Card className="h-full flex flex-col">
+          <CardHeader className="py-2 px-3 flex-shrink-0">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold">
               <TrendingUp className="w-5 h-5" />
               Z Position vs Time (Height Above Ground)
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={270}>
+          <CardContent className="p-3 flex-1 flex flex-col">
+            <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="timestamp" />

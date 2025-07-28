@@ -11,7 +11,6 @@ cd Drone_Sync
 npm install --legacy-peer-deps
 ```
 
-
 ### 2. Python Environment Setup
 
 ```bash

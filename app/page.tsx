@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DashboardParameters } from "@/components/dashbard-parameters"
 import DashboardSafeSpot from "@/components/dashboard-safespot"
 import ZvsTimeChart from "@/components/dashboard-z_vs_t-graph"
-import LiveMonitoringPanel from "@/components/dashboard-livedata"
 import { AutoCollectButton } from "@/components/auto-collect-button"
 import { useAutoCollect } from "@/contexts/auto-collect-context"
 
@@ -44,15 +43,23 @@ export default function DashboardPage() {
     }, []);
 
     return (
-      <div className="bg-white border border-gray-300 p-4 h-full overflow-auto">
-        <h3 className="font-bold text-lg mb-2 flex items-center gap-2">Events from Jetson</h3>
-        {loading && !events ? (
-          <div className="text-gray-500">Loading...</div>
-        ) : error && !events ? (
-          <div className="text-red-500">{error}</div>
-        ) : (
-          <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>
-        )}
+      <div className="h-full flex flex-col">
+        <Card className="h-full flex flex-col">
+          <CardHeader className="py-2 px-3 flex-shrink-0">
+            <CardTitle className="text-lg font-semibold">Events from Jetson</CardTitle>
+          </CardHeader>
+          <CardContent className="p-3 flex-1 flex flex-col">
+            <div className="flex-1 overflow-auto">
+              {loading && !events ? (
+                <div className="text-gray-500">Loading...</div>
+              ) : error && !events ? (
+                <div className="text-red-500">{error}</div>
+              ) : (
+                <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>
+              )}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     );
   }
@@ -79,34 +86,37 @@ export default function DashboardPage() {
             "
           >
             {/* Top Left Section: Safe Spot */}
-            <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 650 }}>
-              <DashboardSafeSpot />
+            <section className="bg-white flex flex-col h-full w-full items-end" style={{ minHeight: 0, maxHeight: 650 }}>
+              <div className="h-full w-full">
+                <DashboardSafeSpot />
+              </div>
             </section>
             {/* Events from Jetson beside Safe Spot */}
-            <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 650 }}>
-              <JetsonEventsBox />
-            </section>
-            {/* Top Middle Section: Parameters and Live Monitoring */}
-            <section className="bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 650 }}>
-              <div className="pl-1">
-                <DashboardParameters />
+            <section className="bg-white flex flex-col h-full w-full items-end" style={{ minHeight: 0, maxHeight: 650 }}>
+              <div className="h-full w-full">
+                <JetsonEventsBox />
               </div>
-              <div className="flex-1 flex flex-col justify-stretch items-stretch min-h-0">
-                <LiveMonitoringPanel />
+            </section>
+            {/* Top Middle Section: Parameters only */}
+            <section className="bg-white flex flex-col h-full w-full items-end" style={{ minHeight: 0, maxHeight: 650 }}>
+              <div className="h-full w-full">
+                <DashboardParameters />
               </div>
             </section>
             {/* Top Right Section: YouTube feed shifted right */}
-            <section className="bg-white flex flex-col h-full w-full pl-1" style={{ minHeight: 0, maxHeight: 640 }}>
-              <iframe
-                width="100%"
-                height="640"
-                src="https://www.youtube.com/embed/xRPjKQtRXR8?autoplay=1"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                title="YouTube Live Stream"
-                style={{ background: '#000', display: 'block' }}
-              />
+            <section className="bg-white flex flex-col h-full w-full pl-1 items-end" style={{ minHeight: 0, maxHeight: 650 }}>
+              <div className="h-full w-full">
+                <iframe
+                  width="100%"
+                  height="650"
+                  src="https://www.youtube.com/embed/xRPjKQtRXR8?autoplay=1"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="YouTube Live Stream"
+                  style={{ background: '#000', display: 'block' }}
+                />
+              </div>
             </section>
             {/* Bottom Full-width Section: Z vs Time chart shifted further down and made taller */}
             <section className="col-span-4 bg-white flex flex-col h-full w-full" style={{ minHeight: 0, maxHeight: 500, marginTop: 24 }}>
