@@ -319,20 +319,47 @@ export function DashboardParameters() {
                 </Card>
 
                 {/* New row: Roll, Pitch, Yaw (Attitude) below Wx, Wy, Wz */}
-                {/* Single long box for Roll, Pitch, Yaw - longer and better fit */}
-                <Card className="w-full min-w-[420px] h-24 flex flex-row items-center justify-evenly px-10 mt-2">
-                  <div className="flex flex-col items-center flex-1">
-                    <CardTitle className="text-base font-semibold">Roll</CardTitle>
-                    <span className="text-2xl font-bold">{attitude?.roll?.toFixed(2) ?? '--'}</span>
-                  </div>
-                  <div className="flex flex-col items-center flex-1">
-                    <CardTitle className="text-base font-semibold">Pitch</CardTitle>
-                    <span className="text-2xl font-bold">{attitude?.pitch?.toFixed(2) ?? '--'}</span>
-                  </div>
-                  <div className="flex flex-col items-center flex-1">
-                    <CardTitle className="text-base font-semibold">Yaw</CardTitle>
-                    <span className="text-2xl font-bold">{attitude?.yaw?.toFixed(2) ?? '--'}</span>
-                  </div>
+                {/* Individual cards for Roll, Pitch, Yaw - matching Wx, Wy, Wz style */}
+                <Card className="w-70 h-20">
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
+                    <CardTitle className="text-lg font-bold">Roll</CardTitle>
+                    <Axis3D className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent className="px-2 py-0">
+                    {attitude ? (
+                      <div className="text-base font-medium">{(attitude.roll * (180 / Math.PI)).toFixed(2)}°</div>
+                    ) : (
+                      <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+                    )}
+                  </CardContent>
+                </Card>
+
+                <Card className="w-70 h-20">
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
+                    <CardTitle className="text-lg font-bold">Pitch</CardTitle>
+                    <Axis3D className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent className="px-2 py-0">
+                    {attitude ? (
+                      <div className="text-base font-medium">{(attitude.pitch * (180 / Math.PI)).toFixed(2)}°</div>
+                    ) : (
+                      <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+                    )}
+                  </CardContent>
+                </Card>
+
+                <Card className="w-70 h-20">
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 py-3 pb-1 px-2">
+                    <CardTitle className="text-lg font-bold">Yaw</CardTitle>
+                    <Axis3D className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent className="px-2 py-0">
+                    {attitude ? (
+                      <div className="text-base font-medium">{(attitude.yaw * (180 / Math.PI)).toFixed(2)}°</div>
+                    ) : (
+                      <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+                    )}
+                  </CardContent>
                 </Card>
 
               </div>
