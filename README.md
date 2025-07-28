@@ -112,7 +112,7 @@ SkySync_Gcs-1.1/
 conda activate drone
 
 # For USB connection (direct to drone)
-python3 listen.py --connection=/dev/tty.usbmodem01 --baud=115200
+python3 listen.py --connection=/dev/tty.usbserial-D30JKVZM --baud=115200
 
 # For UDP connection (via MAVProxy)
 python3 listen.py --connection=udp:localhost:14550
@@ -155,7 +155,7 @@ The `listen.py` script supports various connection methods:
 
 ```bash
 # USB Serial (most common for direct connection)
-python3 listen.py --connection=/dev/tty.usbmodem01 --baud=115200
+python3 listen.py --connection=/dev/tty.usbserial-D30JKVZM --baud=115200
 
 # UDP (for MAVProxy or SITL)
 python3 listen.py --connection=udp:localhost:14550

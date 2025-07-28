@@ -4,6 +4,8 @@ import signal
 import sys
 import atexit
 import glob
+import shutil
+from datetime import datetime
 from pymavlink import mavutil
 import time
 import argparse
@@ -17,15 +19,34 @@ parser.add_argument('--baud', type=int, default=115200,
 args = parser.parse_args()
 
 PARAMS_DIR = os.path.join('public', 'params')
+HISTORY_DIR = os.path.join('public', 'params_history')
+ARCHIVE_DIR = os.path.join('historical_data')
 os.makedirs(PARAMS_DIR, exist_ok=True)
+os.makedirs(HISTORY_DIR, exist_ok=True)
+os.makedirs(ARCHIVE_DIR, exist_ok=True)
 
 def cleanup_json_files():
-    """Remove all JSON files from params directory"""
+    """Move all files from params_history to historical_data and clean up params"""
     try:
-        json_files = glob.glob(os.path.join(PARAMS_DIR, '*.json'))
-        for file_path in json_files:
+        # Create timestamped subdirectory in historical_data
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        session_dir = os.path.join(ARCHIVE_DIR, f"session_{timestamp}")
+        os.makedirs(session_dir, exist_ok=True)
+        
+        # Move all files from params_history to historical_data
+        history_files = glob.glob(os.path.join(HISTORY_DIR, '*.json'))
+        for file_path in history_files:
+            filename = os.path.basename(file_path)
+            dest_path = os.path.join(session_dir, filename)
+            shutil.move(file_path, dest_path)
+        
+        # Clean up params directory
+        params_files = glob.glob(os.path.join(PARAMS_DIR, '*.json'))
+        for file_path in params_files:
             os.remove(file_path)
-        print(f"Cleaned up {len(json_files)} JSON files")
+        
+        print(f"Archived {len(history_files)} history files to {session_dir}")
+        print(f"Cleaned up {len(params_files)} params files")
     except Exception as e:
         print(f"Error cleaning up files: {e}")
 
