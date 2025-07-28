@@ -32,7 +32,7 @@ interface JetsonData {
 
 export default function LiveMonitoringPanel() {
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 })
-  const [connectionStatus, setConnectionStatus] = useState('Connecting...')
+  const [connectionStatus, setConnectionStatus] = useState('Ready')
   const [jetsonData, setJetsonData] = useState<JetsonData | null>(null)
   const [jetsonStatus, setJetsonStatus] = useState<'connected' | 'disconnected' | 'error'>('disconnected')
   const [lastJetsonUpdate, setLastJetsonUpdate] = useState<string>('')
@@ -67,7 +67,8 @@ export default function LiveMonitoringPanel() {
 
   // Fetch Jetson data
   const fetchJetsonData = async (useMockData = false) => {
-    setLoading(true)
+    // Don't show loading for subsequent fetches to prevent flickering
+    if (!jetsonData) setLoading(true)
     try {
       const endpoint = '/api/jetson-data'
       const method = useMockData ? 'POST' : 'GET'
@@ -80,7 +81,7 @@ export default function LiveMonitoringPanel() {
     } catch {
       setJetsonStatus('error')
     } finally {
-      setLoading(false)
+      if (!jetsonData) setLoading(false)
     }
   }
 
@@ -99,13 +100,11 @@ export default function LiveMonitoringPanel() {
           }
         }
 
-        // If no real data available, set to origin
-        setCurrentPosition({ x: 0, y: 0 })
+        // If no real data available, keep last known position to prevent flickering
         setConnectionStatus('No Data')
       } catch {
-        // If fetch fails, set to origin
-        setCurrentPosition({ x: 0, y: 0 })
-        setConnectionStatus('No Data')
+        // If fetch fails, keep last known position to prevent flickering
+        setConnectionStatus('Connection Lost')
       }
     }
     fetchPositionData()

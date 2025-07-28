@@ -53,13 +53,32 @@ export function AutoCollectProvider({ children }: { children: React.ReactNode })
     }
 
     // Toggle auto-collect
-    const toggleAutoCollect = () => {
+    const toggleAutoCollect = async () => {
         if (autoCollect) {
             if (intervalRef.current) {
                 clearInterval(intervalRef.current)
                 intervalRef.current = null
             }
             setAutoCollect(false)
+
+            // Stop telemetry processes when aborting
+            try {
+                console.log('Stopping telemetry processes...')
+                const response = await fetch('/api/stop-telemetry', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                const result = await response.json()
+                if (result.status === 'success') {
+                    console.log('Telemetry processes stopped successfully')
+                } else {
+                    console.error('Failed to stop telemetry processes:', result.message)
+                }
+            } catch (error) {
+                console.error('Error stopping telemetry processes:', error)
+            }
         } else {
             collectCurrentData()
             intervalRef.current = setInterval(collectCurrentData, 5000)

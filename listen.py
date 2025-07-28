@@ -104,7 +104,8 @@ def monitor_messages(master):
         'RANGEFINDER': 'RANGEFINDER.json',
         'DISTANCE_SENSOR': 'DISTANCE_SENSOR.json',
         'AHRS': 'AHRS.json',
-        'AHRS2': 'AHRS2.json'
+        'AHRS2': 'AHRS2.json',
+        'MEMINFO': 'MEMINFO.json'
     }
 
     msg = master.recv_match(blocking=False)

@@ -15,19 +15,15 @@ export default function DashboardPage() {
   // Events from Jetson Component
   function JetsonEventsBox() {
     const [events, setEvents] = React.useState('');
-    const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState('');
 
     const fetchEvents = async () => {
-      // Don't show loading for subsequent fetches to prevent flickering
-      if (!events) setLoading(true);
       setError('');
       try {
         const response = await fetch('/api/status-text', { cache: 'no-store' });
         const result = await response.json();
         if (result.status === 'success') {
           setEvents(result.data);
-          setLoading(false);
         } else {
           setError(result.message || 'Failed to fetch events');
         }
@@ -50,9 +46,7 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent className="p-3 flex-1 flex flex-col">
             <div className="flex-1 overflow-auto">
-              {loading && !events ? (
-                <div className="text-gray-500">Loading...</div>
-              ) : error && !events ? (
+              {error && !events ? (
                 <div className="text-red-500">{error}</div>
               ) : (
                 <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>

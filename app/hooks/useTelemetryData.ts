@@ -71,13 +71,17 @@ export function useTelemetryData() {
           batteryRes,
           heartbeatRes,
           imuRes,
-          positionRes
+          positionRes,
+          sysStatusRes,
+          meminfoRes
         ] = await Promise.all([
           fetch('/params/ATTITUDE.json?t=' + Date.now(), { cache: 'no-store' }),
           fetch('/params/BATTERY_STATUS.json?t=' + Date.now(), { cache: 'no-store' }),
           fetch('/params/HEARTBEAT.json?t=' + Date.now(), { cache: 'no-store' }),
           fetch('/params/SCALED_IMU2.json?t=' + Date.now(), { cache: 'no-store' }),
-          fetch('/params/LOCAL_POSITION_NED.json?t=' + Date.now(), { cache: 'no-store' })
+          fetch('/params/LOCAL_POSITION_NED.json?t=' + Date.now(), { cache: 'no-store' }),
+          fetch('/params/SYS_STATUS.json?t=' + Date.now(), { cache: 'no-store' }),
+          fetch('/params/MEMINFO.json?t=' + Date.now(), { cache: 'no-store' })
         ])
 
         // Check if any files are missing (404 means listen.py not running)
@@ -90,6 +94,8 @@ export function useTelemetryData() {
         const heartbeat = await heartbeatRes.json()
         const imu = await imuRes.json()
         const position = await positionRes.json()
+        const sysStatus = sysStatusRes.ok ? await sysStatusRes.json() : null
+        const meminfo = meminfoRes.ok ? await meminfoRes.json() : null
 
         // Check if we have a valid heartbeat
         const currentTime = Date.now()
@@ -103,12 +109,12 @@ export function useTelemetryData() {
         // Check if connection is stale (more than 5 seconds since last heartbeat)
         const isStale = lastHeartbeatTime && (currentTime - lastHeartbeatTime) > 5000
 
-        // Set system health to 0 values when no real data
+        // Calculate system health from SYS_STATUS and MEMINFO
         const systemHealth = {
-          cpu_load: 0,
-          memory_usage: 0,
-          storage_usage: 0,
-          temperature: 0
+          cpu_load: sysStatus ? Math.round((sysStatus.load / 1000) * 100) : 0, // Convert load to percentage
+          memory_usage: meminfo ? Math.round(((meminfo.freemem32 > 0 ? ((1000000 - meminfo.freemem32) / 1000000) * 100 : 0))) : 0,
+          storage_usage: 0, // Not available in current telemetry
+          temperature: sysStatus ? Math.round(sysStatus.voltage_battery / 100) : 0 // Use battery temp as system temp
         }
 
         // Set communication metrics to 0 values when no real data

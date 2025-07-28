@@ -76,7 +76,6 @@ export function DashboardParameters() {
                     <div className="text-base font-medium">
                       {globalPosition ? (-globalPosition.z).toFixed(2) + " m" : "0.00 m"}
                     </div>
-                    <p className="text-xs text-muted-foreground">Relative to home</p>
                   </CardContent>
                 </Card>
                 <Card className="w-70 h-20">
@@ -88,15 +87,6 @@ export function DashboardParameters() {
                     <div className="text-base font-medium">
                       {attitude ? (attitude.roll * (180 / Math.PI)).toFixed(1) + "°" : "0.0°"}
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      {attitude
-                        ? "P: " +
-                        (attitude.pitch * (180 / Math.PI)).toFixed(1) +
-                        "° Y: " +
-                        (attitude.yaw * (180 / Math.PI)).toFixed(1) +
-                        "°"
-                        : "P: 0.0° Y: 0.0°"}
-                    </p>
                   </CardContent>
                 </Card>
                 <Card className="w-70 h-20">
@@ -111,13 +101,6 @@ export function DashboardParameters() {
                         " m/s"
                         : "0.00 m/s"}
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      {globalPosition
-                        ? (Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) * 3.6).toFixed(
-                          2,
-                        ) + " km/h"
-                        : "0.00 km/h"}
-                    </p>
                   </CardContent>
                 </Card>
 

@@ -29,12 +29,10 @@ interface JetsonData {
 export default function DashboardSafeSpot() {
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 })
   const [detectedSpots, setDetectedSpots] = useState<string[]>([])
-  const [connectionStatus, setConnectionStatus] = useState('Connecting...')
-  const [positionHistory, setPositionHistory] = useState<{ x: number, y: number }[]>([])
+  const [connectionStatus, setConnectionStatus] = useState('Ready')
   const [jetsonData, setJetsonData] = useState<JetsonData | null>(null)
   const [jetsonStatus, setJetsonStatus] = useState<'connected' | 'disconnected' | 'error'>('disconnected')
   const [lastJetsonUpdate, setLastJetsonUpdate] = useState<string>('')
-  const [loading, setLoading] = useState(false)
 
   // Detection threshold (0.5 meters)
   const DETECTION_THRESHOLD = 0.5
@@ -73,8 +71,6 @@ export default function DashboardSafeSpot() {
 
   // Fetch data from Jetson device - live data only
   const fetchJetsonData = async () => {
-    // Don't show loading for subsequent fetches to prevent flickering
-    if (!jetsonData) setLoading(true)
     try {
       const endpoint = '/api/jetson-data'
 
@@ -93,7 +89,6 @@ export default function DashboardSafeSpot() {
       const newData: JetsonData = await response.json()
       setJetsonData(newData)
       setLastJetsonUpdate(new Date().toLocaleTimeString())
-      setLoading(false)
 
       if (newData.status === 'success') {
         setJetsonStatus('connected')
@@ -106,7 +101,6 @@ export default function DashboardSafeSpot() {
     } catch (error) {
       console.error('Error fetching Jetson data:', error)
       setJetsonStatus('error')
-      if (!jetsonData) setLoading(false)
     }
   }
 
@@ -126,12 +120,6 @@ export default function DashboardSafeSpot() {
 
             setCurrentPosition({ x: fieldX, y: fieldY })
             setConnectionStatus(`Live Data - NED (${localData.time_boot_ms}ms)`)
-
-            // Update position history for trail effect
-            setPositionHistory(prev => {
-              const newHistory = [...prev, { x: fieldX, y: fieldY }]
-              return newHistory.slice(-10)
-            })
 
             return
           }
@@ -157,11 +145,6 @@ export default function DashboardSafeSpot() {
 
             setConnectionStatus(`Position Data - Global (${globalData.time_boot_ms}ms)`)
 
-            setPositionHistory(prev => {
-              const newHistory = [...prev, currentPosition]
-              return newHistory.slice(-10)
-            })
-
             return
           }
         }
@@ -171,13 +154,8 @@ export default function DashboardSafeSpot() {
 
       } catch (error) {
         console.error('Error fetching position data:', error)
-        setCurrentPosition({ x: 0, y: 0 })
-        setConnectionStatus('No Data')
-
-        setPositionHistory(prev => {
-          const newHistory = [...prev, { x: 0, y: 0 }]
-          return newHistory.slice(-10)
-        })
+        // Don't reset position to 0,0 - keep last known position to prevent flickering
+        setConnectionStatus('Connection Lost')
       }
     }
 
@@ -399,30 +377,6 @@ export default function DashboardSafeSpot() {
                     </g>
                   )
                 })}
-
-                {/* Position trail */}
-                {positionHistory.length > 1 && (
-                  <g>
-                    <polyline
-                      points={positionHistory.map(pos => `${pos.x},${12 - pos.y}`).join(' ')}
-                      fill="none"
-                      stroke="#ff6666"
-                      strokeWidth="0.05"
-                      opacity="0.7"
-                      strokeDasharray="0.1,0.05"
-                    />
-                    {positionHistory.slice(0, -1).map((pos, index) => (
-                      <circle
-                        key={index}
-                        cx={pos.x}
-                        cy={12 - pos.y}
-                        r="0.08"
-                        fill="#ff9999"
-                        opacity={0.3 + (index / positionHistory.length) * 0.4}
-                      />
-                    ))}
-                  </g>
-                )}
 
                 {/* Current drone position */}
                 <g>
