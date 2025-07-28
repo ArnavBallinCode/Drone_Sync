@@ -43,27 +43,37 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
     }
   }, [data]);
 
-  // Use prop data if provided, else state
-  const chartData = (data || historyData).map((item) => ({
-    timestamp: new Date(item.timestamp).toLocaleTimeString(),
-    z: -(item.position?.z || 0), // Invert Z for intuitive display
-  }));
+  // Generate system time-based data
+  const generateSystemTimeData = () => {
+    const baseData = data || historyData;
 
-  return (
+    // If no data, create dummy data with current system time
+    if (baseData.length === 0) {
+      const dummyData = [];
+      const now = new Date();
+      for (let i = 0; i < 20; i++) {
+        const time = new Date(now.getTime() - (19 - i) * 5000); // 5 second intervals
+        dummyData.push({
+          timestamp: time.toLocaleTimeString(),
+          z: 0,
+          fullTime: time.toISOString()
+        });
+      }
+      return dummyData;
+    }
+
+    // Use real data with actual timestamps
+    return baseData.map((item) => ({
+      timestamp: new Date(item.timestamp).toLocaleTimeString(),
+      z: -(item.position?.z || 0), // Invert Z for intuitive display
+      fullTime: item.timestamp
+    }));
+  };
+
+  const chartData = generateSystemTimeData(); return (
     <div className="h-full w-full flex flex-col">
       {!data && loading ? (
         <div className="text-center text-muted-foreground p-8">Loading...</div>
-      ) : chartData.length === 0 ? (
-        <Card className="h-full flex flex-col">
-          <CardHeader className="py-2 px-3 flex-shrink-0">
-            <CardTitle className="text-lg font-semibold">Z Position vs Time</CardTitle>
-          </CardHeader>
-          <CardContent className="p-3 flex-1 flex flex-col justify-center">
-            <div className="text-center text-muted-foreground p-8">
-              No telemetry data found. Start data collection to view Z vs Time analysis.
-            </div>
-          </CardContent>
-        </Card>
       ) : (
         <Card className="h-full flex flex-col">
           <CardHeader className="py-2 px-3 flex-shrink-0">
@@ -81,6 +91,7 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
                     dataKey="timestamp"
                     tick={{ fontSize: 12 }}
                     interval="preserveStartEnd"
+                    label={{ value: 'Time (seconds)', position: 'insideBottom', offset: -5 }}
                   />
                   <YAxis
                     tick={{ fontSize: 12 }}
@@ -88,7 +99,10 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
                   />
                   <Tooltip
                     labelFormatter={(value) => `Time: ${value}`}
-                    formatter={(value: number) => [value.toFixed(3) + ' m', 'Height Above Ground']}
+                    formatter={(value: number) => [
+                      (data || historyData).length === 0 ? 'No Data' : value.toFixed(3) + ' m',
+                      'Height Above Ground'
+                    ]}
                     contentStyle={{
                       backgroundColor: 'rgba(255, 255, 255, 0.95)',
                       border: '1px solid #ccc',

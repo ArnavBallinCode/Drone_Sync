@@ -8,7 +8,7 @@ export function AutoCollectButton() {
     const { autoCollect, collecting, toggleAutoCollect } = useAutoCollect()
 
     return (
-        <div className="flex items-center justify-end p-4">
+        <div className="flex items-center justify-start p-4">
             <Button
                 onClick={toggleAutoCollect}
                 variant={autoCollect ? "destructive" : "default"}
@@ -16,7 +16,7 @@ export function AutoCollectButton() {
                 disabled={collecting}
             >
                 {autoCollect ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-                {autoCollect ? "Stop" : "Start"} Auto-Collect
+                {autoCollect ? "Abort" : "Get Data"}
             </Button>
         </div>
     )

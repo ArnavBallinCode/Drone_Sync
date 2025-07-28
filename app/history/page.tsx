@@ -157,9 +157,45 @@ export default function HistoryAnalysisPage() {
     return historyData.filter(item => new Date(item.timestamp) >= cutoff)
   }
 
-  // Prepare chart data
+  // Prepare chart data with dummy data fallback
   const prepareChartData = () => {
     const filtered = getFilteredData()
+
+    // If no data, create dummy data for demonstration
+    if (filtered.length === 0) {
+      const dummyData = []
+      const now = new Date()
+      for (let i = 0; i < 20; i++) {
+        const time = new Date(now.getTime() - (19 - i) * 5000) // 5 second intervals
+        dummyData.push({
+          index: i,
+          timestamp: time.toLocaleTimeString(),
+          fullTime: time.toISOString(),
+          x: 0,
+          y: 0,
+          z: 0,
+          altitude: 0,
+          roll: 0,
+          pitch: 0,
+          yaw: 0,
+          vx: 0,
+          vy: 0,
+          vz: 0,
+          voltage: 0,
+          current: 0,
+          batteryRemaining: 0,
+          xacc: 0,
+          yacc: 0,
+          zacc: 0,
+          xgyro: 0,
+          ygyro: 0,
+          zgyro: 0,
+          distance: 0
+        })
+      }
+      return dummyData
+    }
+
     return filtered.map((item, index) => ({
       index,
       timestamp: new Date(item.timestamp).toLocaleTimeString(),
@@ -439,107 +475,65 @@ export default function HistoryAnalysisPage() {
         </CardContent>
       </Card>
 
-      {historyData.length === 0 ? (
-        <Alert>
-          <AlertTitle>Live Not Connected</AlertTitle>
-          <AlertDescription>
-            No telemetry data found. Start auto-collect or manually collect data to begin analysis.
-          </AlertDescription>
-        </Alert>
-      ) : (
-        <Tabs defaultValue="position" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-6">
-            <TabsTrigger value="position">Position</TabsTrigger>
-            <TabsTrigger value="attitude">Attitude</TabsTrigger>
-            <TabsTrigger value="velocity">Velocity</TabsTrigger>
-            <TabsTrigger value="battery">Battery</TabsTrigger>
-            <TabsTrigger value="imu">IMU</TabsTrigger>
-            <TabsTrigger value="sensors">Sensors</TabsTrigger>
-          </TabsList>
+      {/* Charts always visible - show dummy data if no real data */}
+      <Tabs defaultValue="position" className="space-y-6">
+        <TabsList className="grid w-full grid-cols-6">
+          <TabsTrigger value="position">Position</TabsTrigger>
+          <TabsTrigger value="attitude">Attitude</TabsTrigger>
+          <TabsTrigger value="velocity">Velocity</TabsTrigger>
+          <TabsTrigger value="battery">Battery</TabsTrigger>
+          <TabsTrigger value="imu">IMU</TabsTrigger>
+          <TabsTrigger value="sensors">Sensors</TabsTrigger>
+        </TabsList>
 
-          {/* Position Charts */}
-          <TabsContent value="position" className="space-y-6">
-            <div className="grid gap-6">
-              {/* Z vs Time - Special Highlight */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5" />
-                    Z Position vs Time (Height Above Ground)
-                  </CardTitle>
-                  <div className="text-sm text-muted-foreground">
-                    Positive values indicate height above starting point (NED Z-axis inverted for intuitive display)
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={400}>
-                    <AreaChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip
-                        labelFormatter={(value) => `Time: ${value}`}
-                        formatter={(value: number, name: string) => [value.toFixed(3) + 'm', 'Height Above Ground']}
-                      />
-                      <Area
-                        type="monotone"
-                        dataKey="z"
-                        stroke="#8884d8"
-                        fill="#8884d8"
-                        fillOpacity={0.3}
-                        strokeWidth={2}
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
-
-              {/* XYZ Position */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>XYZ Position vs Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={400}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Line type="monotone" dataKey="x" stroke="#8884d8" name="X Position (m)" />
-                      <Line type="monotone" dataKey="y" stroke="#82ca9d" name="Y Position (m)" />
-                      <Line type="monotone" dataKey="z" stroke="#ffc658" name="Z Height (m)" strokeWidth={3} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
-
-              {/* Altitude */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Relative Altitude vs Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={300}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip />
-                      <Line type="monotone" dataKey="altitude" stroke="#ff7300" name="Relative Altitude (m)" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Attitude Charts */}
-          <TabsContent value="attitude" className="space-y-6">
+        {/* Position Charts */}
+        <TabsContent value="position" className="space-y-6">
+          <div className="grid gap-6">
+            {/* Z vs Time - Special Highlight */}
             <Card>
               <CardHeader>
-                <CardTitle>Attitude vs Time</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5" />
+                  Z Position vs Time (Height Above Ground)
+                </CardTitle>
+                <div className="text-sm text-muted-foreground">
+                  {historyData.length === 0 ? (
+                    "No live data - showing baseline chart. Start auto-collect to see real telemetry data."
+                  ) : (
+                    "Positive values indicate height above starting point (NED Z-axis inverted for intuitive display)"
+                  )}
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={400}>
+                  <AreaChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="timestamp" />
+                    <YAxis />
+                    <Tooltip
+                      labelFormatter={(value) => `Time: ${value}`}
+                      formatter={(value: number, name: string) => [
+                        historyData.length === 0 ? 'No Data' : value.toFixed(3) + 'm',
+                        'Height Above Ground'
+                      ]}
+                    />
+                    <Area
+                      type="monotone"
+                      dataKey="z"
+                      stroke="#8884d8"
+                      fill="#8884d8"
+                      fillOpacity={0.3}
+                      strokeWidth={2}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+
+            {/* XYZ Position */}
+            <Card>
+              <CardHeader>
+                <CardTitle>XYZ Position vs Time</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={400}>
@@ -549,79 +543,18 @@ export default function HistoryAnalysisPage() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="roll" stroke="#8884d8" name="Roll (°)" />
-                    <Line type="monotone" dataKey="pitch" stroke="#82ca9d" name="Pitch (°)" />
-                    <Line type="monotone" dataKey="yaw" stroke="#ffc658" name="Yaw (°)" />
+                    <Line type="monotone" dataKey="x" stroke="#8884d8" name="X Position (m)" />
+                    <Line type="monotone" dataKey="y" stroke="#82ca9d" name="Y Position (m)" />
+                    <Line type="monotone" dataKey="z" stroke="#ffc658" name="Z Height (m)" strokeWidth={3} />
                   </LineChart>
                 </ResponsiveContainer>
               </CardContent>
             </Card>
-          </TabsContent>
 
-          {/* Velocity Charts */}
-          <TabsContent value="velocity" className="space-y-6">
+            {/* Altitude */}
             <Card>
               <CardHeader>
-                <CardTitle>Velocity vs Time</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={400}>
-                  <LineChart data={chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="timestamp" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="vx" stroke="#8884d8" name="Vx (m/s)" />
-                    <Line type="monotone" dataKey="vy" stroke="#82ca9d" name="Vy (m/s)" />
-                    <Line type="monotone" dataKey="vz" stroke="#ffc658" name="Vz (m/s)" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* Battery Charts */}
-          <TabsContent value="battery" className="space-y-6">
-            <div className="grid gap-6 md:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Battery Voltage vs Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={300}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip />
-                      <Line type="monotone" dataKey="voltage" stroke="#8884d8" name="Voltage (mV)" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Battery Current vs Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={300}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip />
-                      <Line type="monotone" dataKey="current" stroke="#82ca9d" name="Current (mA)" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
-            </div>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Battery Remaining vs Time</CardTitle>
+                <CardTitle>Relative Altitude vs Time</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -630,86 +563,188 @@ export default function HistoryAnalysisPage() {
                     <XAxis dataKey="timestamp" />
                     <YAxis />
                     <Tooltip />
-                    <Line type="monotone" dataKey="batteryRemaining" stroke="#ffc658" name="Remaining %" />
+                    <Line type="monotone" dataKey="altitude" stroke="#ff7300" name="Relative Altitude (m)" />
                   </LineChart>
                 </ResponsiveContainer>
               </CardContent>
             </Card>
-          </TabsContent>
+          </div>
+        </TabsContent>
 
-          {/* IMU Charts */}
-          <TabsContent value="imu" className="space-y-6">
-            <div className="grid gap-6 md:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Acceleration vs Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={300}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Line type="monotone" dataKey="xacc" stroke="#8884d8" name="X Accel (m/s²)" />
-                      <Line type="monotone" dataKey="yacc" stroke="#82ca9d" name="Y Accel (m/s²)" />
-                      <Line type="monotone" dataKey="zacc" stroke="#ffc658" name="Z Accel (m/s²)" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
+        {/* Attitude Charts */}
+        <TabsContent value="attitude" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Attitude vs Time</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={400}>
+                <LineChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="timestamp" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Line type="monotone" dataKey="roll" stroke="#8884d8" name="Roll (°)" />
+                  <Line type="monotone" dataKey="pitch" stroke="#82ca9d" name="Pitch (°)" />
+                  <Line type="monotone" dataKey="yaw" stroke="#ffc658" name="Yaw (°)" />
+                </LineChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Gyroscope vs Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={300}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="timestamp" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Line type="monotone" dataKey="xgyro" stroke="#8884d8" name="X Gyro" />
-                      <Line type="monotone" dataKey="ygyro" stroke="#82ca9d" name="Y Gyro" />
-                      <Line type="monotone" dataKey="zgyro" stroke="#ffc658" name="Z Gyro" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
+        {/* Velocity Charts */}
+        <TabsContent value="velocity" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Velocity vs Time</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={400}>
+                <LineChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="timestamp" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Line type="monotone" dataKey="vx" stroke="#8884d8" name="Vx (m/s)" />
+                  <Line type="monotone" dataKey="vy" stroke="#82ca9d" name="Vy (m/s)" />
+                  <Line type="monotone" dataKey="vz" stroke="#ffc658" name="Vz (m/s)" />
+                </LineChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
-          {/* Sensors Charts */}
-          <TabsContent value="sensors" className="space-y-6">
+        {/* Battery Charts */}
+        <TabsContent value="battery" className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle>Rangefinder Distance vs Time</CardTitle>
+                <CardTitle>Battery Voltage vs Time</CardTitle>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={400}>
-                  <AreaChart data={chartData}>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="timestamp" />
                     <YAxis />
                     <Tooltip />
-                    <Area
-                      type="monotone"
-                      dataKey="distance"
-                      stroke="#8884d8"
-                      fill="#8884d8"
-                      fillOpacity={0.3}
-                      name="Distance (m)"
-                    />
-                  </AreaChart>
+                    <Line type="monotone" dataKey="voltage" stroke="#8884d8" name="Voltage (mV)" />
+                  </LineChart>
                 </ResponsiveContainer>
               </CardContent>
             </Card>
-          </TabsContent>
-        </Tabs>
-      )}
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Battery Current vs Time</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="timestamp" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="current" stroke="#82ca9d" name="Current (mA)" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Battery Remaining vs Time</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="timestamp" />
+                  <YAxis />
+                  <Tooltip />
+                  <Line type="monotone" dataKey="batteryRemaining" stroke="#ffc658" name="Remaining %" />
+                </LineChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* IMU Charts */}
+        <TabsContent value="imu" className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Acceleration vs Time</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="timestamp" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="xacc" stroke="#8884d8" name="X Accel (m/s²)" />
+                    <Line type="monotone" dataKey="yacc" stroke="#82ca9d" name="Y Accel (m/s²)" />
+                    <Line type="monotone" dataKey="zacc" stroke="#ffc658" name="Z Accel (m/s²)" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Gyroscope vs Time</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="timestamp" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="xgyro" stroke="#8884d8" name="X Gyro" />
+                    <Line type="monotone" dataKey="ygyro" stroke="#82ca9d" name="Y Gyro" />
+                    <Line type="monotone" dataKey="zgyro" stroke="#ffc658" name="Z Gyro" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        {/* Sensors Charts */}
+        <TabsContent value="sensors" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Rangefinder Distance vs Time</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={400}>
+                <AreaChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="timestamp" />
+                  <YAxis />
+                  <Tooltip />
+                  <Area
+                    type="monotone"
+                    dataKey="distance"
+                    stroke="#8884d8"
+                    fill="#8884d8"
+                    fillOpacity={0.3}
+                    name="Distance (m)"
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }
