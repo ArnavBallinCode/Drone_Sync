@@ -131,9 +131,9 @@ export function DashboardParameters() {
                     <Battery className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent className="px-2 py-0">
-                    <div className="text-base font-medium">{battery ? battery.battery_remaining + "%" : "Loading..."}</div>
+                    <div className="text-base font-medium">{battery ? battery.battery_remaining + "%" : "0%"}</div>
                     <p className="text-xs text-muted-foreground">
-                      {battery ? (battery.voltages[0] / 1000).toFixed(1) + "V" : ""}
+                      {battery ? (battery.voltages[0] / 1000).toFixed(1) + "V" : "0.0V"}
                     </p>
                   </CardContent>
                 </Card>
@@ -145,7 +145,7 @@ export function DashboardParameters() {
                   </CardHeader>
                   <CardContent className="px-2 py-0">
                     <div className="text-base font-medium">
-                      {globalPosition ? (-globalPosition.relative_alt / 1000).toFixed(2) + " m" : "Loading..."}
+                      {globalPosition ? (-globalPosition.relative_alt / 1000).toFixed(2) + " m" : "0.00 m"}
                     </div>
                     <p className="text-xs text-muted-foreground">Relative to home</p>
                   </CardContent>
@@ -157,7 +157,7 @@ export function DashboardParameters() {
                   </CardHeader>
                   <CardContent className="px-2 py-0">
                     <div className="text-base font-medium">
-                      {attitude ? (attitude.roll * (180 / Math.PI)).toFixed(1) + "°" : "Loading..."}
+                      {attitude ? (attitude.roll * (180 / Math.PI)).toFixed(1) + "°" : "0.0°"}
                     </div>
                     <p className="text-xs text-muted-foreground">
                       {attitude
@@ -166,7 +166,7 @@ export function DashboardParameters() {
                         "° Y: " +
                         (attitude.yaw * (180 / Math.PI)).toFixed(1) +
                         "°"
-                        : ""}
+                        : "P: 0.0° Y: 0.0°"}
                     </p>
                   </CardContent>
                 </Card>
@@ -180,14 +180,14 @@ export function DashboardParameters() {
                       {globalPosition
                         ? (Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) / 100).toFixed(2) +
                         " m/s"
-                        : "Loading..."}
+                        : "0.00 m/s"}
                     </div>
                     <p className="text-xs text-muted-foreground">
                       {globalPosition
                         ? ((Math.sqrt(Math.pow(globalPosition.vx, 2) + Math.pow(globalPosition.vy, 2)) / 100) * 3.6).toFixed(
                           2,
                         ) + " km/h"
-                        : ""}
+                        : "0.00 km/h"}
                     </p>
                   </CardContent>
                 </Card>
@@ -201,7 +201,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.x.toFixed(2)} m</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 m</div>
                     )}
                   </CardContent>
                 </Card>
@@ -215,7 +215,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.y.toFixed(2)} m</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 m</div>
                     )}
                   </CardContent>
                 </Card>
@@ -229,7 +229,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.z.toFixed(2)} m</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 m</div>
                     )}
                   </CardContent>
                 </Card>
@@ -243,7 +243,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.vx.toFixed(2)} m/s</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 m/s</div>
                     )}
                   </CardContent>
                 </Card>
@@ -257,7 +257,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.vy.toFixed(2)} m/s</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 m/s</div>
                     )}
                   </CardContent>
                 </Card>
@@ -271,7 +271,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.vz.toFixed(2)} m/s</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 m/s</div>
                     )}
                   </CardContent>
                 </Card>
@@ -285,7 +285,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.vx.toFixed(2)} rad</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 rad</div>
                     )}
                   </CardContent>
                 </Card>
@@ -299,7 +299,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.vx.toFixed(2)} rad</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 rad</div>
                     )}
                   </CardContent>
                 </Card>
@@ -313,7 +313,7 @@ export function DashboardParameters() {
                     {localPosition ? (
                       <div className="text-base font-medium">{localPosition.vx.toFixed(2)} rad</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading position data...</div>
+                      <div className="text-base font-medium">0.00 rad</div>
                     )}
                   </CardContent>
                 </Card>
@@ -329,7 +329,7 @@ export function DashboardParameters() {
                     {attitude ? (
                       <div className="text-base font-medium">{(attitude.roll * (180 / Math.PI)).toFixed(2)}°</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+                      <div className="text-base font-medium">0.00°</div>
                     )}
                   </CardContent>
                 </Card>
@@ -343,7 +343,7 @@ export function DashboardParameters() {
                     {attitude ? (
                       <div className="text-base font-medium">{(attitude.pitch * (180 / Math.PI)).toFixed(2)}°</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+                      <div className="text-base font-medium">0.00°</div>
                     )}
                   </CardContent>
                 </Card>
@@ -357,7 +357,7 @@ export function DashboardParameters() {
                     {attitude ? (
                       <div className="text-base font-medium">{(attitude.yaw * (180 / Math.PI)).toFixed(2)}°</div>
                     ) : (
-                      <div className="text-center py-8 text-muted-foreground">Loading attitude data...</div>
+                      <div className="text-base font-medium">0.00°</div>
                     )}
                   </CardContent>
                 </Card>
