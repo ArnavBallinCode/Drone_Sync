@@ -59,12 +59,9 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
             <CardTitle className="text-lg font-semibold">Z Position vs Time</CardTitle>
           </CardHeader>
           <CardContent className="p-3 flex-1 flex flex-col justify-center">
-            <Alert>
-              <AlertTitle>No Historical Data</AlertTitle>
-              <AlertDescription>
-                No telemetry data found. Start data collection to view Z vs Time analysis.
-              </AlertDescription>
-            </Alert>
+            <div className="text-center text-muted-foreground p-8">
+              No telemetry data found. Start data collection to view Z vs Time analysis.
+            </div>
           </CardContent>
         </Card>
       ) : (
@@ -80,20 +77,20 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={chartData} margin={{ top: 10, right: 30, left: 20, bottom: 20 }}>
                   <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-                  <XAxis 
-                    dataKey="timestamp" 
+                  <XAxis
+                    dataKey="timestamp"
                     tick={{ fontSize: 12 }}
                     interval="preserveStartEnd"
                   />
-                  <YAxis 
+                  <YAxis
                     tick={{ fontSize: 12 }}
                     label={{ value: 'Height (m)', angle: -90, position: 'insideLeft' }}
                   />
                   <Tooltip
                     labelFormatter={(value) => `Time: ${value}`}
                     formatter={(value: number) => [value.toFixed(3) + ' m', 'Height Above Ground']}
-                    contentStyle={{ 
-                      backgroundColor: 'rgba(255, 255, 255, 0.95)', 
+                    contentStyle={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.95)',
                       border: '1px solid #ccc',
                       borderRadius: '4px'
                     }}

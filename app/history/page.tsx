@@ -441,7 +441,7 @@ export default function HistoryAnalysisPage() {
 
       {historyData.length === 0 ? (
         <Alert>
-          <AlertTitle>No Historical Data</AlertTitle>
+          <AlertTitle>Live Not Connected</AlertTitle>
           <AlertDescription>
             No telemetry data found. Start auto-collect or manually collect data to begin analysis.
           </AlertDescription>
