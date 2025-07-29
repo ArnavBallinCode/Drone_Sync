@@ -10,7 +10,7 @@ interface ZvsTimeChartProps {
 }
 
 export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
-  const [graphData, setGraphData] = useState<number[]>(new Array(300).fill(0)); // 300 points for 5 minutes
+  const [graphData, setGraphData] = useState<number[]>(new Array(600).fill(0)); // 600 points for 10 minutes
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [currentZ, setCurrentZ] = useState(0);
@@ -62,15 +62,11 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
           return newData;
         });
 
-        setCurrentIndex(prev => (prev + 1) % 300); // 300 points for 5 minutes
-      }, 1000); // Update every 1 second (300 seconds = 5 minutes)
+        setCurrentIndex(prev => (prev + 1) % 600); // 600 points for 10 minutes
+      }, 1000); // Update every 1 second (600 seconds = 10 minutes)
     } else {
       setIsActive(false);
-      // Clear graph when stopped
-      if (!autoCollect) {
-        setGraphData(new Array(300).fill(0)); // Reset to 300 points
-        setCurrentIndex(0);
-      }
+      // DON'T clear graph when stopped - keep previous data like other parameters
     }
 
     return () => {
@@ -78,17 +74,17 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
     };
   }, [autoCollect, collecting, currentIndex]);
 
-  // Simple SVG chart - 5 minutes of real-time data
+  // Simple SVG chart - 10 minutes of real-time data
   const renderChart = () => {
-    const width = 900;  // Wider for 5 minutes
+    const width = 1200;  // Much wider for 10 minutes
     const height = 280;  // Taller for better visibility
-    const padding = 60;  // More padding for cleaner labels
-    const chartWidth = width - 2 * padding;
+    const padding = 40;  // Less left padding, more space for graph
+    const chartWidth = width - padding - 20; // Less right padding too
     const chartHeight = height - 2 * padding;
 
-    // Create path points for smooth ECG-style movement (300 points = 5 minutes)
+    // Create path points for smooth ECG-style movement (600 points = 10 minutes)
     const points = graphData.map((z, index) => {
-      const x = padding + (index / 299) * chartWidth; // 299 to get full width
+      const x = padding + (index / 599) * chartWidth; // 599 to get full width
       // Map 0-6m range to chart height (0m at bottom, 6m at top)
       const y = padding + chartHeight - (z / 6) * chartHeight;
       return { x, y, isActive: index === currentIndex };
@@ -125,13 +121,13 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
           </filter>
         </defs>
 
-        {/* Grid lines - 5 minute intervals */}
-        {[0, 1, 2, 3, 4, 5].map(minute => (
+        {/* Grid lines - 10 minute intervals */}
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(minute => (
           <g key={minute}>
             <line
-              x1={padding + (minute / 5) * chartWidth}
+              x1={padding + (minute / 10) * chartWidth}
               y1={padding}
-              x2={padding + (minute / 5) * chartWidth}
+              x2={padding + (minute / 10) * chartWidth}
               y2={height - padding}
               stroke="#e5e7eb"
               strokeWidth="1"
@@ -139,7 +135,7 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
               opacity="0.6"
             />
             <text
-              x={padding + (minute / 5) * chartWidth}
+              x={padding + (minute / 10) * chartWidth}
               y={height - 20}
               textAnchor="middle"
               fontSize="11"
@@ -176,13 +172,13 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
           </g>
         ))}
 
-        {/* Enhanced smooth line path for real-time data */}
-        {autoCollect && graphData.some(value => value !== 0) && (
+        {/* Enhanced smooth line path - always show data (don't hide on abort) */}
+        {graphData.some(value => value !== 0) && (
           <path
             d={(() => {
               const validPoints = points
                 .map((point, index) => ({ ...point, value: graphData[index] }))
-                .filter((point, index) => index <= currentIndex && point.value !== 0);
+                .filter((point, index) => point.value !== 0);
 
               if (validPoints.length === 0) return '';
               if (validPoints.length === 1) return `M ${validPoints[0].x},${validPoints[0].y}`;
@@ -191,7 +187,7 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
               const pathCommands = validPoints.map((point, index) =>
                 `${index === 0 ? 'M' : 'L'} ${point.x},${point.y}`
               );
-              
+
               return pathCommands.join(' ');
             })()}
             fill="none"
@@ -206,8 +202,8 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
           />
         )}
 
-        {/* Enhanced current position indicator */}
-        {autoCollect && currentZ > 0 && currentIndex > 0 && (
+        {/* Enhanced current position indicator - show when there's data */}
+        {currentZ > 0 && currentIndex > 0 && (
           <>
             {/* Outer glow ring */}
             <circle
@@ -215,9 +211,9 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
               cy={points[currentIndex - 1]?.y || 0}
               r="8"
               fill="none"
-              stroke="#3b82f6"
+              stroke={autoCollect ? "#3b82f6" : "#94a3b8"}
               strokeWidth="1"
-              opacity="0.4"
+              opacity={autoCollect ? "0.4" : "0.3"}
               filter="url(#currentGlow)"
             />
             {/* Main position dot */}
@@ -225,7 +221,7 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
               cx={points[currentIndex - 1]?.x || 0}
               cy={points[currentIndex - 1]?.y || 0}
               r="4"
-              fill="#1e40af"
+              fill={autoCollect ? "#1e40af" : "#64748b"}
               stroke="#ffffff"
               strokeWidth="2"
               style={{
@@ -245,7 +241,7 @@ export default function ZvsTimeChart({ data }: ZvsTimeChartProps) {
           fill="#374151"
           fontWeight="600"
         >
-          Altitude Monitor - 5 Minute Window
+          Altitude Monitor - 10 Minute Window
         </text>
 
         {/* Current Z value display with enhanced styling */}
