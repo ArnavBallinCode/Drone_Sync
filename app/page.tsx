@@ -12,45 +12,50 @@ import { useAutoCollect } from "@/contexts/auto-collect-context"
 export default function DashboardPage() {
   const { graphData } = useAutoCollect()
 
-  // Events from Jetson Component
+  // Events from Drone Component
   function JetsonEventsBox() {
     const [events, setEvents] = React.useState('');
-    const [error, setError] = React.useState('');
+    const eventsRef = React.useRef('');
+    const isFetchingRef = React.useRef(false);
 
-    const fetchEvents = async () => {
-      setError('');
+    const fetchEvents = React.useCallback(async () => {
+      if (isFetchingRef.current) return; // Prevent multiple simultaneous fetches
+
+      isFetchingRef.current = true;
       try {
-        const response = await fetch('/api/status-text', { cache: 'no-store' });
+        const response = await fetch('/api/status-text', {
+          cache: 'no-store',
+          headers: { 'Cache-Control': 'no-cache' }
+        });
         const result = await response.json();
-        if (result.status === 'success') {
+
+        // Only update if we have successful data AND it's actually different
+        if (result.status === 'success' && result.data && result.data !== eventsRef.current) {
+          eventsRef.current = result.data;
           setEvents(result.data);
-        } else {
-          setError(result.message || 'Failed to fetch events');
         }
       } catch (err) {
-        setError('Error fetching events');
+        // Silent error handling
+      } finally {
+        isFetchingRef.current = false;
       }
-    };
+    }, []);
 
     React.useEffect(() => {
       fetchEvents();
-      const interval = setInterval(fetchEvents, 3000); // Faster update - 3 seconds
+      const interval = setInterval(fetchEvents, 5000); // Slower fetch - 5 seconds
       return () => clearInterval(interval);
-    }, []);
+    }, [fetchEvents]);
 
     return (
       <div className="h-full flex flex-col">
         <Card className="h-full flex flex-col">
           <CardHeader className="py-2 px-3 flex-shrink-0">
-            <CardTitle className="text-lg font-semibold">Events from Jetson</CardTitle>
+            <CardTitle className="text-lg font-semibold">Events from Drone</CardTitle>
           </CardHeader>
           <CardContent className="p-3 flex-1 flex flex-col">
             <div className="flex-1 overflow-auto">
-              {error && !events ? (
-                <div className="text-red-500">{error}</div>
-              ) : (
-                <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>
-              )}
+              <pre className="whitespace-pre-wrap text-sm text-gray-800">{events}</pre>
             </div>
           </CardContent>
         </Card>

@@ -20,22 +20,9 @@ export async function GET() {
         const statusText = fs.readFileSync(LOCAL_PATH, 'utf-8');
         return NextResponse.json({ status: 'success', data: statusText });
     } catch (error: any) {
-        // Return mock data as fallback
-        const mockEvents = `Drone Status: Flying (MOCK DATA)
-Battery: 85%
-Lock: Active
-Altitude: 120m
-Speed: 15 m/s
-Temperature: 25°C
-Signal Strength: Strong
-Mission: Scanning safe spots
-Last Update: ${new Date().toLocaleString()}
-Error: ${error.message}`;
-
+        // Return error status without any data - let frontend handle gracefully
         return NextResponse.json({
-            status: 'success',
-            data: mockEvents,
-            note: 'Using mock data due to connection error'
+            status: 'error'
         });
     }
 }

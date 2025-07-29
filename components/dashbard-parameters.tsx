@@ -13,6 +13,7 @@ export function DashboardParameters() {
   const localPosition = data.local_position
   const attitude = data.attitude
   const battery = data.battery
+  const ahrs = data.ahrs // Add AHRS data
   const globalPosition = data.local_position // Use local position for altitude calculation
 
   return (
@@ -194,10 +195,10 @@ export function DashboardParameters() {
                     <Axis3D className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent className="px-2 py-0">
-                    {localPosition ? (
-                      <div className="text-base font-medium">{localPosition.vx.toFixed(2)} rad</div>
+                    {ahrs ? (
+                      <div className="text-base font-medium">{(ahrs.omegaIx * 180 / Math.PI).toFixed(3)} °/s</div>
                     ) : (
-                      <div className="text-base font-medium">0.00 rad</div>
+                      <div className="text-base font-medium">0.000 °/s</div>
                     )}
                   </CardContent>
                 </Card>
@@ -208,10 +209,10 @@ export function DashboardParameters() {
                     <Axis3D className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent className="px-2 py-0">
-                    {localPosition ? (
-                      <div className="text-base font-medium">{localPosition.vx.toFixed(2)} rad</div>
+                    {ahrs ? (
+                      <div className="text-base font-medium">{(ahrs.omegaIy * 180 / Math.PI).toFixed(3)} °/s</div>
                     ) : (
-                      <div className="text-base font-medium">0.00 rad</div>
+                      <div className="text-base font-medium">0.000 °/s</div>
                     )}
                   </CardContent>
                 </Card>
@@ -222,10 +223,10 @@ export function DashboardParameters() {
                     <Axis3D className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent className="px-2 py-0">
-                    {localPosition ? (
-                      <div className="text-base font-medium">{localPosition.vx.toFixed(2)} rad</div>
+                    {ahrs ? (
+                      <div className="text-base font-medium">{(ahrs.omegaIz * 180 / Math.PI).toFixed(3)} °/s</div>
                     ) : (
-                      <div className="text-base font-medium">0.00 rad</div>
+                      <div className="text-base font-medium">0.000 °/s</div>
                     )}
                   </CardContent>
                 </Card>

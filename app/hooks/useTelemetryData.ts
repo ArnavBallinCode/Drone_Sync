@@ -42,6 +42,15 @@ export interface TelemetryData {
     vy: number
     vz: number
   }
+  ahrs?: {
+    omegaIx: number
+    omegaIy: number
+    omegaIz: number
+    accel_weight: number
+    renorm_val: number
+    error_rp: number
+    error_yaw: number
+  }
   system_health?: {
     cpu_load: number
     memory_usage: number
@@ -73,7 +82,8 @@ export function useTelemetryData() {
           imuRes,
           positionRes,
           sysStatusRes,
-          meminfoRes
+          meminfoRes,
+          ahrsRes
         ] = await Promise.all([
           fetch('/params/ATTITUDE.json?t=' + Date.now(), { cache: 'no-store' }),
           fetch('/params/BATTERY_STATUS.json?t=' + Date.now(), { cache: 'no-store' }),
@@ -81,7 +91,8 @@ export function useTelemetryData() {
           fetch('/params/SCALED_IMU2.json?t=' + Date.now(), { cache: 'no-store' }),
           fetch('/params/LOCAL_POSITION_NED.json?t=' + Date.now(), { cache: 'no-store' }),
           fetch('/params/SYS_STATUS.json?t=' + Date.now(), { cache: 'no-store' }),
-          fetch('/params/MEMINFO.json?t=' + Date.now(), { cache: 'no-store' })
+          fetch('/params/MEMINFO.json?t=' + Date.now(), { cache: 'no-store' }),
+          fetch('/params/AHRS.json?t=' + Date.now(), { cache: 'no-store' })
         ])
 
         // Check if any files are missing (404 means listen.py not running)
@@ -96,6 +107,7 @@ export function useTelemetryData() {
         const position = await positionRes.json()
         const sysStatus = sysStatusRes.ok ? await sysStatusRes.json() : null
         const meminfo = meminfoRes.ok ? await meminfoRes.json() : null
+        const ahrs = ahrsRes.ok ? await ahrsRes.json() : null
 
         // Check if we have a valid heartbeat
         const currentTime = Date.now()
@@ -131,6 +143,7 @@ export function useTelemetryData() {
           heartbeat,
           scaled_imu2: imu,
           local_position: position,
+          ahrs,
           system_health: systemHealth,
           communication
         }
